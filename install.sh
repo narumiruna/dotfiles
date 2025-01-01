@@ -22,7 +22,7 @@ mkdir -p $GHOSTTY_DIR
 if [ ! -f "$GHOSTTY_CONFIG" ]; then
     copy_ghostty_config
 else
-    echo "Config file already exists. Do you want to overwrite it? (y/n)"
+    echo "Ghostty Ccnfig file already exists. Do you want to overwrite it? (y/n)"
     read -r response
     if [ "$response" = "y" ]; then
         copy_ghostty_config
