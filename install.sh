@@ -6,7 +6,7 @@ GHOSTTY_CONFIG="$GHOSTTY_DIR/config"
 TMUX_CONFIG="$HOME/.tmux.conf"
 
 copy_ghostty_config() {
-    echo "Copying config file..."
+    echo "Copying ghostty config file..."
     cp ./ghostty/config $GHOSTTY_CONFIG
 }
 
@@ -15,7 +15,7 @@ copy_tmux_config() {
     cp ./tmux/config $TMUX_CONFIG
 }
 
-echo "Creating config directory..."
+echo "Creating ghostty config directory..."
 mkdir -p $GHOSTTY_DIR
 
 # ghostty
