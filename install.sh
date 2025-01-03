@@ -7,12 +7,12 @@ TMUX_CONFIG="$HOME/.tmux.conf"
 
 copy_ghostty_config() {
     echo "Copying ghostty config file..."
-    cp ./ghostty/config $GHOSTTY_CONFIG
+    cp "./ghostty/config" "$GHOSTTY_CONFIG"
 }
 
 copy_tmux_config() {
     echo "Copying tmux config file..."
-    cp ./tmux/config $TMUX_CONFIG
+    cp "./tmux/config" "$TMUX_CONFIG"
 }
 
 echo "Creating ghostty config directory..."
@@ -22,7 +22,7 @@ mkdir -p $GHOSTTY_DIR
 if [ ! -f "$GHOSTTY_CONFIG" ]; then
     copy_ghostty_config
 else
-    echo "Ghostty Ccnfig file already exists. Do you want to overwrite it? (y/n)"
+    echo "Ghostty config file already exists. Do you want to overwrite it? (y/n)"
     read -r response
     if [ "$response" = "y" ]; then
         copy_ghostty_config
