@@ -4,4 +4,4 @@ theme = Molokai
 window-save-state = always
 copy-on-select = true
 shell-integration = zsh
-macos-option-as-alt = true
+# macos-option-as-alt = true
