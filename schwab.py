@@ -31,6 +31,7 @@ def main() -> None:
 
     df = pd.DataFrame(data, columns=["date", "value"])
     df.sort_values(by="date", inplace=True, ascending=True)
+    df.drop_duplicates(subset=["date"], inplace=True)
     df.to_csv("output.csv", index=False)
     print(df.head())
 
