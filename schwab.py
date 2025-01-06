@@ -1,9 +1,15 @@
+# /// script
+# requires-python = ">=3.11"
+# dependencies = [
+#     "pandas",
+# ]
+# ///
 from datetime import datetime
 
 import pandas as pd
 
 RAW_STR = """
-
+Wednesday, January 01, 2025	$500,000.00
 """
 
 
