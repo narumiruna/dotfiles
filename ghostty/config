@@ -5,3 +5,7 @@ window-save-state = always
 copy-on-select = true
 shell-integration = zsh
 # macos-option-as-alt = true
+
+# keybinds
+keybind = cmd+right=next_tab
+keybind = cmd+left=previous_tab
