@@ -13,12 +13,12 @@ Wednesday, January 01, 2025	$500,000.00
 """
 
 
-def parse(line: str) -> tuple[datetime, float]:
+def parse(line: str) -> tuple[str, float]:
     date_str, value_str = line.split("$")
     date = datetime.strptime(date_str.strip(), "%A %B %d %Y")
-    date = date.strftime("%Y-%m-%d")
+    date_str_formatted = date.strftime("%Y-%m-%d")
     value = float(value_str)
-    return date, value
+    return date_str_formatted, value
 
 
 def main() -> None:
@@ -33,9 +33,12 @@ def main() -> None:
         .split("\n")
     )
 
-    data = [parse(line) for line in lines]
+    parsed_data = [parse(line) for line in lines]
 
-    df = pd.DataFrame(data, columns=["date", "value"])
+    df = pd.DataFrame({
+        "date": [d[0] for d in parsed_data],
+        "value": [d[1] for d in parsed_data]
+    })
     df.sort_values(by="date", inplace=True, ascending=True)
     df.drop_duplicates(subset=["date"], inplace=True)
     df.to_csv("output.csv", index=False)
