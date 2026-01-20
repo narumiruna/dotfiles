@@ -35,7 +35,6 @@ plugins=(
   z
   zsh-autosuggestions
   zsh-syntax-highlighting
-  zsh-prompt-benchmark
 )
 
 # zsh-completions
