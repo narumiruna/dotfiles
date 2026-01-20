@@ -22,6 +22,7 @@ export EDITOR='vim'
 
 . "$HOME/.cargo/env"
 
+source $HOME/.config/zsh/brew.zsh
 source $HOME/.config/zsh/atuin.zsh
 source $HOME/.config/zsh/bun.zsh
 source $HOME/.config/zsh/pyenv.zsh
