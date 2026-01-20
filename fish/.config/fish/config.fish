@@ -1,6 +1,7 @@
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.atuin/bin
+fish_add_path $HOME/.pyenv/bin
 
 set -U LANGUAGE C.UTF-8
 set -U LC_ALL C.UTF-8
@@ -20,6 +21,9 @@ if status is-interactive
     # https://starship.rs/guide/
     # cargo install starship --locked
     starship init fish | source
+
+    # phttps://github.com/pyenv/pyenv
+    pyenv init - fish | source
 
     source ~/.config/fish/abbr.fish
 
