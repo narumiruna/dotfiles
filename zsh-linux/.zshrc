@@ -45,8 +45,6 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export LANGUAGE=C.UTF-8
-export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
 export EDITOR='vim'
 
