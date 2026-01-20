@@ -12,3 +12,6 @@ git:
 
 tmux:
 	stow -t ~ tmux
+
+ghostty:
+	stow -t ~ ghostty
