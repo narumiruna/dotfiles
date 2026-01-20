@@ -9,3 +9,6 @@ zsh-linux:
 
 git:
 	stow -t ~ git
+
+tmux:
+	stow -t ~ tmux
