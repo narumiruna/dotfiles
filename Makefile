@@ -1,3 +1,9 @@
+stow-linux: zsh-linux common
+
+stow-macos: zsh-macos common
+
+common: starship fish git tmux
+
 starship:
 	stow -t ~ starship
 
@@ -18,3 +24,5 @@ tmux:
 
 ghostty:
 	stow -t ~ ghostty
+
+.PHONY: stow-linux stow-macos common starship fish zsh-linux zsh-macos git tmux ghostty
