@@ -1,0 +1,11 @@
+# alias lsa='ls -lah'
+# alias l='ls -lah'
+# alias ll='ls -lh'
+# alias la='ls -lAh'
+abbr -a ls 'lsd'
+abbr -a lsa 'lsd -lah'
+abbr -a l 'lsd -lah'
+abbr -a ll 'lsd -lh'
+abbr -a la 'lsd -lAh'
+
+abbr -a gst 'git status'
