@@ -1,9 +1,15 @@
 font-family = MesloLGS Nerd Font Mono
-font-size = 16
+font-size = 20
 theme = Molokai
 window-save-state = always
 copy-on-select = true
 shell-integration = zsh
 # macos-option-as-alt = true
 
-# keybinds
+# keybinds for Claude code
+keybind = shift+enter=text:\x1b\r
+
+# fix scroll for Claude code
+window-vsync = false
+shell-integration-features = no-cursor
+scrollback-limit = 1000000
