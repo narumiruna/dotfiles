@@ -106,5 +106,5 @@ venv.bak/
 # Claude
 .claude/settings.local.json
 
-# Schwab
-output.csv
+# fish
+fish/.config/fish/fish_variables
