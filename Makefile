@@ -6,3 +6,6 @@ fish:
 
 zsh-linux:
 	stow -t ~ zsh-linux
+
+git:
+	stow -t ~ git
