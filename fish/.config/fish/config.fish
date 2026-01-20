@@ -2,6 +2,10 @@ fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.cargo/bin
 fish_add_path $HOME/.atuin/bin
 
+set -U LANGUAGE C.UTF-8
+set -U LC_ALL C.UTF-8
+set -U LANG C.UTF-8
+
 if status is-interactive
     # Commands to run in interactive sessions can go here
 
