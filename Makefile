@@ -7,6 +7,9 @@ fish:
 zsh-linux:
 	stow -t ~ zsh-linux
 
+zsh-macos:
+	stow -t ~ zsh-macos
+
 git:
 	stow -t ~ git
 
