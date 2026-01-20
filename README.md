@@ -14,11 +14,7 @@ brew install stow
 ## Usage
 
 ```shell
-# Or explicitly:
 make all
-
-# Install common dotfiles + macOS-specific configs
-make macos
 
 # See all available options
 make help
