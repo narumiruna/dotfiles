@@ -35,10 +35,8 @@ tmux:
 ghostty:
 	$(STOW) $(STOW_FLAGS) -t $(TARGET) ghostty
 
-# macOS-specific configs
-macos: all ghostty
-	$(STOW) $(STOW_FLAGS) -t $(TARGET) macos
-	@echo "✓ macOS-specific packages installed"
+macos-defaults:
+	$(STOW) $(STOW_FLAGS) -t $(TARGET) macos-defaults
 
 # Install skill bundles
 skills:
@@ -63,21 +61,18 @@ help:
 	@echo "Dotfiles Management Makefile"
 	@echo ""
 	@echo "Usage:"
-	@echo "  make [target]"
-	@echo ""
-	@echo "Targets:"
-	@echo "  all          Install all packages (zsh, starship, fish, git, tmux)"
-	@echo "  macos        Install all packages + macOS-specific configs"
-	@echo "  ghostty      Install Ghostty terminal config"
-	@echo "  skills       Install Codex/Claude skill bundles"
-	@echo "  clean        Remove all symlinks"
-	@echo "  help         Show this help message"
-	@echo ""
-	@echo "Individual packages:"
-	@echo "  zsh          Install Zsh configuration"
-	@echo "  starship     Install Starship prompt"
-	@echo "  fish         Install Fish shell configuration"
-	@echo "  git          Install Git configuration"
-	@echo "  tmux         Install Tmux configuration"
+	@printf "  make [target]\n\n"
+	@printf "Targets:\n"
+	@printf "  %-17s %s\n" "all (default)" "Install zsh, starship, fish, git, tmux"
+	@printf "  %-17s %s\n" "zsh" "Install Zsh configuration"
+	@printf "  %-17s %s\n" "starship" "Install Starship prompt"
+	@printf "  %-17s %s\n" "fish" "Install Fish shell configuration"
+	@printf "  %-17s %s\n" "git" "Install Git configuration"
+	@printf "  %-17s %s\n" "tmux" "Install Tmux configuration"
+	@printf "  %-17s %s\n" "macos-defaults" "Reset Launchpad and stop .DS_Store on network volumes"
+	@printf "  %-17s %s\n" "ghostty" "Install Ghostty terminal config"
+	@printf "  %-17s %s\n" "skills" "Install Codex/Claude skill bundles"
+	@printf "  %-17s %s\n" "clean" "Remove all symlinks"
+	@printf "  %-17s %s\n" "help" "Show this help message"
 
 .PHONY: all starship fish zsh git tmux ghostty skills macos clean help
