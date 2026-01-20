@@ -26,6 +26,8 @@ alias la="lsd -lAh"
 
 alias gst="git status"
 alias gph="git push origin HEAD"
+alias gd="git diff"
+alias gds="git diff --staged"
 
 alias extract="ouch decompress -y"
 
