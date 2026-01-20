@@ -9,3 +9,4 @@ abbr -a ll 'lsd -lh'
 abbr -a la 'lsd -lAh'
 
 abbr -a gst 'git status'
+abbr -a gph 'git push origin HEAD'
