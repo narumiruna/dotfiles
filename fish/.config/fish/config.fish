@@ -1,11 +1,4 @@
-fish_add_path $HOME/.local/bin
-fish_add_path $HOME/.cargo/bin
-fish_add_path $HOME/.atuin/bin
-fish_add_path $HOME/.pyenv/bin
-
-set -U LANGUAGE C.UTF-8
-set -U LC_ALL C.UTF-8
-set -U LANG C.UTF-8
+echo "Loading ~/.config/fish/config.fish"
 
 if status is-interactive
     # Commands to run in interactive sessions can go here
@@ -24,9 +17,5 @@ if status is-interactive
 
     # phttps://github.com/pyenv/pyenv
     pyenv init - fish | source
-
-    source ~/.config/fish/abbr.fish
-
-    set -U EDITOR vim
 end
 
