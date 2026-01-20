@@ -12,8 +12,16 @@ SKILLS_CLAUDE_DIR := ~/.claude/skills
 # Default target
 .DEFAULT_GOAL := all
 
+# Detect OS
+UNAME := $(shell uname -s)
+ifeq ($(UNAME),Darwin)
+	PLATFORM_TARGETS := macos-defaults ghostty
+else
+	PLATFORM_TARGETS :=
+endif
+
 # Install all packages
-all: zsh starship fish git tmux
+all: zsh starship fish git tmux $(PLATFORM_TARGETS)
 	@echo "✓ All packages installed"
 
 # Individual package targets
