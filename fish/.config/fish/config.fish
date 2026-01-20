@@ -17,6 +17,8 @@ if status is-interactive
     # cargo install starship --locked
     starship init fish | source
 
-    source ~/.config/fish/alias.fish
+    source ~/.config/fish/abbr.fish
+
+    set -U EDITOR vim
 end
 
