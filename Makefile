@@ -37,7 +37,7 @@ ghostty:
 	@$(STOW) $(STOW_FLAGS) -t $(TARGET) ghostty
 
 macos-defaults:
-	@$(STOW) $(STOW_FLAGS) -t $(TARGET) macos-defaults
+	@macos-defaults/macos-defaults.sh
 
 starship:
 	@$(STOW) $(STOW_FLAGS) -t $(TARGET) starship
@@ -60,7 +60,7 @@ skills:
 clean:
 	@echo "Removing symlinks..."
 	-@$(STOW) -D -t $(TARGET) zsh starship fish git tmux 2>/dev/null || true
-	-@$(STOW) -D -t $(TARGET) ghostty macos-defaults 2>/dev/null || true
+	-@$(STOW) -D -t $(TARGET) ghostty 2>/dev/null || true
 	-@$(STOW) -D -t $(SKILLS_CODEX_DIR) skills 2>/dev/null || true
 	-@$(STOW) -D -t $(SKILLS_CLAUDE_DIR) skills 2>/dev/null || true
 	@echo "✓ Cleanup complete"
