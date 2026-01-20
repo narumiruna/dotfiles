@@ -14,9 +14,6 @@ brew install stow
 ## Usage
 
 ```shell
-# Install common dotfiles (works on both Linux and macOS)
-make
-
 # Or explicitly:
 make all
 
