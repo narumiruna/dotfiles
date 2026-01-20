@@ -2,7 +2,6 @@
 
 ## Prerequisites
 
-
 ```shell
 # Linux (Debian/Ubuntu)
 sudo apt update
@@ -15,9 +14,15 @@ brew install stow
 ## Usage
 
 ```shell
-# Linux
-make linux
+# Install common dotfiles (works on both Linux and macOS)
+make
 
-# macOS
+# Or explicitly:
+make all
+
+# Install common dotfiles + macOS-specific configs
 make macos
+
+# See all available options
+make help
 ```
