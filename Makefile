@@ -1,8 +1,4 @@
-linux: zsh-linux common
-
-macos: zsh-macos common
-
-common: starship fish git tmux
+all: zsh starship fish git tmux
 
 starship:
 	stow -t ~ starship
@@ -10,11 +6,8 @@ starship:
 fish:
 	stow -t ~ fish
 
-zsh-linux:
-	stow -t ~ zsh-linux
-
-zsh-macos:
-	stow -t ~ zsh-macos
+zsh:
+	stow -t ~ zsh
 
 git:
 	stow -t ~ git
@@ -34,4 +27,4 @@ skills:
 	mkdir -p ~/.claude/skills
 	stow -t ~/.claude/skills skills
 
-.PHONY: linux macos common starship fish zsh-linux zsh-macos git tmux ghostty skills macos
+.PHONY: all starship fish zsh git tmux ghostty skills macos
