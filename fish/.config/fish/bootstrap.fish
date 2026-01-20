@@ -21,3 +21,7 @@ end
 if not type -q pyenv
     git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 end
+
+if not type -q ouch
+    cargo install --locked ouch
+end
