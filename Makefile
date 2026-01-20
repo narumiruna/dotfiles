@@ -25,10 +25,8 @@ tmux:
 ghostty:
 	stow -t ~ ghostty
 
-codex-skills:
+skills:
 	stow -t ~/.codex skills
-
-claude-skills:
 	stow -t ~/.claude skills
 
-.PHONY: stow-linux stow-macos common starship fish zsh-linux zsh-macos git tmux ghostty codex-skills claude-skills
+.PHONY: stow-linux stow-macos common starship fish zsh-linux zsh-macos git tmux ghostty skills
