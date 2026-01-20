@@ -36,7 +36,7 @@ ghostty:
 	$(STOW) $(STOW_FLAGS) -t $(TARGET) ghostty
 
 # macOS-specific configs
-macos: all
+macos: all ghostty
 	$(STOW) $(STOW_FLAGS) -t $(TARGET) macos
 	@echo "✓ macOS-specific packages installed"
 
