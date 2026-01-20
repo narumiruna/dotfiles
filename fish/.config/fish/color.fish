@@ -1,0 +1,7 @@
+set -Ux fish_color_command brcyan
+set -Ux fish_color_param normal
+set -Ux fish_color_option brblue
+set -Ux fish_color_operator bryellow
+set -Ux fish_color_error brred
+set -Ux fish_color_quote green
+set -Ux fish_color_comment brblack

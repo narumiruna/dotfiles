@@ -4,4 +4,5 @@ if status is-interactive
     zoxide init fish | source
 
     source ~/.config/fish/abbr.fish
+    source ~/.config/fish/color.fish
 end
