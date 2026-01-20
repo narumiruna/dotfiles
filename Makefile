@@ -26,7 +26,9 @@ ghostty:
 	stow -t ~ ghostty
 
 skills:
-	stow -t ~/.codex skills
-	stow -t ~/.claude skills
+	mkdir -p ~/.codex/skills
+	stow -t ~/.codex/skills skills
+	mkdir -p ~/.claude/skills
+	stow -t ~/.claude/skills skills
 
 .PHONY: linux macos common starship fish zsh-linux zsh-macos git tmux ghostty skills
