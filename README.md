@@ -1,14 +1,23 @@
 # dotfiles
 
-## Installation of GNU Stow
+## Prerequisites
 
-### Linux (Debian/Ubuntu)
+
 ```shell
+# Linux (Debian/Ubuntu)
 sudo apt update
 sudo apt install -y stow
+
+# macOS (using Homebrew)
+brew install stow
 ```
 
-### macOS (using Homebrew)
+## Usage
+
 ```shell
-brew install stow
+# Linux
+make linux
+
+# macOS
+make macos
 ```

@@ -1,6 +1,6 @@
-stow-linux: zsh-linux common
+linux: zsh-linux common
 
-stow-macos: zsh-macos common
+macos: zsh-macos common
 
 common: starship fish git tmux
 
@@ -29,4 +29,4 @@ skills:
 	stow -t ~/.codex skills
 	stow -t ~/.claude skills
 
-.PHONY: stow-linux stow-macos common starship fish zsh-linux zsh-macos git tmux ghostty skills
+.PHONY: linux macos common starship fish zsh-linux zsh-macos git tmux ghostty skills
