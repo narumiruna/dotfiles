@@ -1,4 +1,4 @@
-all: zsh starship fish git tmux
+all: zsh starship fish git tmux ghostty
 
 starship:
 	stow -t ~ starship
