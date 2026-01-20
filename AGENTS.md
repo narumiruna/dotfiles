@@ -2,19 +2,20 @@
 
 ## Project Structure & Module Organization
 This repo contains dotfiles organized by tool, intended to be symlinked with GNU Stow.
-- Top-level packages: `zsh/`, `fish/`, `git/`, `tmux/`, `starship/`, `ghostty/`, `macos/`
+- Top-level packages: `zsh/`, `fish/`, `git/`, `tmux/`, `starship/`, `ghostty/`, `macos-defaults/`
 - Each directory mirrors the target path under `$HOME` (e.g., `zsh/.zshrc`, `git/.gitconfig`).
-- `skills/` contains Codex/Claude skill bundles.
+- `skills/` contains Codex/Claude skill bundles with subdirectories for different skill types.
 
 ## Build, Test, and Development Commands
 All management is via `make` and `stow`.
 - `make` or `make all`: symlink `zsh`, `starship`, `fish`, `git`, `tmux` into `~`.
-- `make macos`: symlink macOS-specific files into `~`.
+- `make macos-defaults`: symlink macOS-specific defaults into `~`.
 - `make ghostty`: symlink Ghostty config into `~`.
 - `make skills`: install skills into `~/.codex/skills` and `~/.claude/skills`.
 Examples:
 - `make zsh` (install only Zsh config)
 - `make starship` (install only Starship prompt)
+- `make ghostty` (install only Ghostty config)
 
 ## Coding Style & Naming Conventions
 - Keep files in their tool-specific package directory and mirror the final path.
