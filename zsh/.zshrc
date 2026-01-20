@@ -4,8 +4,6 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
-  extract
-  git
   tmux
   z
   zsh-autosuggestions
@@ -19,6 +17,17 @@ source $ZSH/oh-my-zsh.sh
 
 export LANG=C.UTF-8
 export EDITOR='vim'
+
+alias ls="lsd"
+alias lsa="lsd -lah"
+alias l="lsd -lah"
+alias ll="lsd -lh"
+alias la="lsd -lAh"
+
+alias gst="git status"
+alias gph="git push origin HEAD"
+
+alias extract="ouch decompress -y"
 
 . "$HOME/.cargo/env"
 
