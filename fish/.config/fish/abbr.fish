@@ -11,4 +11,5 @@ abbr -a gds 'git diff --staged'
 
 abbr -a extract 'ouch decompress -y'
 
-abbr -a grep `rg`
+# abbr -a grep `rg`
+alias grep='rg'
