@@ -1,3 +1,3 @@
-if test (uname) = "Darwin"
+if test (uname -s) = "Darwin"
     fish_add_path /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin
 end
