@@ -1,5 +1,5 @@
 # Makefile for dotfiles management using GNU Stow
-# Use 'make' or 'make all' to install common configs
+# Use 'make' or 'make all' to install configs
 # Use 'make help' for available targets
 
 # Variables
@@ -9,18 +9,12 @@ TARGET := ~
 SKILLS_CODEX_DIR := ~/.codex/skills
 SKILLS_CLAUDE_DIR := ~/.claude/skills
 
-# Common packages for all platforms
-COMMON_PACKAGES := zsh starship fish git tmux
-
 # Default target
 .DEFAULT_GOAL := all
 
-# Install all common packages
-all: $(COMMON_PACKAGES)
-	@echo "✓ All common packages installed"
-
-# Install common packages (alias for 'all')
-linux: all
+# Install all packages
+all: zsh starship fish git tmux
+	@echo "✓ All packages installed"
 
 # Individual package targets
 starship:
@@ -57,7 +51,7 @@ skills:
 # Uninstall all packages
 clean:
 	@echo "Removing symlinks..."
-	-$(STOW) -D -t $(TARGET) $(COMMON_PACKAGES) 2>/dev/null || true
+	-$(STOW) -D -t $(TARGET) zsh starship fish git tmux 2>/dev/null || true
 	-$(STOW) -D -t $(TARGET) ghostty 2>/dev/null || true
 	-$(STOW) -D -t $(TARGET) macos 2>/dev/null || true
 	-$(STOW) -D -t $(SKILLS_CODEX_DIR) skills 2>/dev/null || true
@@ -72,9 +66,8 @@ help:
 	@echo "  make [target]"
 	@echo ""
 	@echo "Targets:"
-	@echo "  all          Install common packages (zsh, starship, fish, git, tmux)"
-	@echo "  linux        Alias for 'all' - works on both Linux and macOS"
-	@echo "  macos        Install common packages + macOS-specific configs"
+	@echo "  all          Install all packages (zsh, starship, fish, git, tmux)"
+	@echo "  macos        Install all packages + macOS-specific configs"
 	@echo "  ghostty      Install Ghostty terminal config"
 	@echo "  skills       Install Codex/Claude skill bundles"
 	@echo "  clean        Remove all symlinks"
@@ -87,4 +80,4 @@ help:
 	@echo "  git          Install Git configuration"
 	@echo "  tmux         Install Tmux configuration"
 
-.PHONY: all linux starship fish zsh git tmux ghostty skills macos clean help
+.PHONY: all starship fish zsh git tmux ghostty skills macos clean help
