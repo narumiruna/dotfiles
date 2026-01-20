@@ -1,9 +1,5 @@
 #!/bin/zsh
-is_macos() {
-  [[ "$(uname -s)" == "Darwin" ]]
-}
-
-if is_macos; then
+if [[ "$(uname -s)" == "Darwin" ]]; then
     # reset launchpad
     defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 
