@@ -6,6 +6,8 @@
 STOW := stow
 STOW_FLAGS := --restow -v
 TARGET := ~
+SKILLS_CODEX_DIR := ~/.codex/skills
+SKILLS_CLAUDE_DIR := ~/.claude/skills
 
 # Common packages for all platforms
 COMMON_PACKAGES := zsh starship fish git tmux
@@ -46,10 +48,10 @@ macos: all
 
 # Install skill bundles
 skills:
-	@mkdir -p ~/.codex/skills
-	$(STOW) $(STOW_FLAGS) -t ~/.codex/skills skills
-	@mkdir -p ~/.claude/skills
-	$(STOW) $(STOW_FLAGS) -t ~/.claude/skills skills
+	@mkdir -p $(SKILLS_CODEX_DIR)
+	$(STOW) $(STOW_FLAGS) -t $(SKILLS_CODEX_DIR) skills
+	@mkdir -p $(SKILLS_CLAUDE_DIR)
+	$(STOW) $(STOW_FLAGS) -t $(SKILLS_CLAUDE_DIR) skills
 	@echo "✓ Skills installed"
 
 # Uninstall all packages
@@ -58,8 +60,8 @@ clean:
 	-$(STOW) -D -t $(TARGET) $(COMMON_PACKAGES) 2>/dev/null || true
 	-$(STOW) -D -t $(TARGET) ghostty 2>/dev/null || true
 	-$(STOW) -D -t $(TARGET) macos 2>/dev/null || true
-	-$(STOW) -D -t ~/.codex/skills skills 2>/dev/null || true
-	-$(STOW) -D -t ~/.claude/skills skills 2>/dev/null || true
+	-$(STOW) -D -t $(SKILLS_CODEX_DIR) skills 2>/dev/null || true
+	-$(STOW) -D -t $(SKILLS_CLAUDE_DIR) skills 2>/dev/null || true
 	@echo "✓ Cleanup complete"
 
 # Show help message
