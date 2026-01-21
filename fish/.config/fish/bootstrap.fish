@@ -25,3 +25,19 @@ end
 if not type -q ouch
     cargo install --locked ouch
 end
+
+if not type -q lsd
+    cargo install --locked lsd
+end
+
+if not type -q rg
+    cargo install --locked ripgrep
+end
+
+if not type -q bat
+    cargo install --locked bat
+end
+
+if not type -q fd
+    cargo install --locked fd-find
+end
