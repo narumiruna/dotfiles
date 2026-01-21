@@ -45,4 +45,7 @@ source $HOME/.config/zsh/fnm.zsh
 
 path=("$HOME/.local/bin/env" $path)
 
+# remove duplicate entries in PATH
+path=(${(u)path})
+
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
