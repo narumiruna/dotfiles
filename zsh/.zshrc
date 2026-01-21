@@ -31,7 +31,7 @@ alias gds="git diff --staged"
 
 alias extract="ouch decompress -y"
 
-. "$HOME/.cargo/env"
+path=("$HOME/.cargo/bin" $path)
 
 # macOS
 source $HOME/.config/zsh/brew.zsh
@@ -43,6 +43,6 @@ source $HOME/.config/zsh/bun.zsh
 source $HOME/.config/zsh/pyenv.zsh
 source $HOME/.config/zsh/fnm.zsh
 
-. "$HOME/.local/bin/env"
+path=("$HOME/.local/bin/env" $path)
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
