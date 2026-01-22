@@ -1,5 +1,12 @@
 [user]
 	name = narumi
 	email = toucans-cutouts0f@icloud.com
+	signingkey = ~/.ssh/id_ed25519.pub
+[pull]
+	rebase = true
 [rebase]
 	autoStash = true
+[gpg]
+	format = ssh
+[commit]
+	gpgSign = true
