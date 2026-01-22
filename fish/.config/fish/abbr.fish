@@ -13,4 +13,4 @@ abbr -a extract 'ouch decompress -y'
 
 abbr -a grep 'rg'
 
-abbr -a cat 'bat'
+# abbr -a cat 'bat'
