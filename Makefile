@@ -11,9 +11,6 @@ STOW       := stow
 STOW_FLAGS := --restow -v
 TARGET     := ~
 
-SKILLS_CODEX_DIR  := ~/.codex/skills
-SKILLS_CLAUDE_DIR := ~/.claude/skills
-
 # Platform-specific targets
 UNAME := $(shell uname -s)
 ifeq ($(UNAME),Darwin)
@@ -45,21 +42,11 @@ tmux:
 zsh:
 	@$(STOW) $(STOW_FLAGS) -t $(TARGET) zsh
 
-# Skills
-skills:
-	@mkdir -p $(SKILLS_CODEX_DIR)
-	$(STOW) $(STOW_FLAGS) -t $(SKILLS_CODEX_DIR) skills
-	@mkdir -p $(SKILLS_CLAUDE_DIR)
-	$(STOW) $(STOW_FLAGS) -t $(SKILLS_CLAUDE_DIR) skills
-	@echo "✓ Skills installed"
-
 # Maintenance
 clean:
 	@echo "Removing symlinks..."
 	-@$(STOW) -D -t $(TARGET) zsh starship fish tmux 2>/dev/null || true
 	-@$(STOW) -D -t $(TARGET) ghostty 2>/dev/null || true
-	-@$(STOW) -D -t $(SKILLS_CODEX_DIR) skills 2>/dev/null || true
-	-@$(STOW) -D -t $(SKILLS_CLAUDE_DIR) skills 2>/dev/null || true
 	@echo "✓ Cleanup complete"
 
 # Help
@@ -76,9 +63,8 @@ help:
 	@printf "  %-15s  %s\n" "starship" "Install Starship prompt"
 	@printf "  %-15s  %s\n" "tmux" "Install Tmux config"
 	@printf "  %-15s  %s\n" "zsh" "Install Zsh config"
-	@printf "  %-15s  %s\n" "skills" "Install skill bundles"
 	@printf "  %-15s  %s\n" "clean" "Remove all symlinks"
 	@printf "  %-15s  %s\n" "help" "Show this help"
 	@echo ""
 
-.PHONY: all fish ghostty macos-defaults starship tmux zsh skills clean help
+.PHONY: all fish ghostty macos-defaults starship tmux zsh clean help
