@@ -23,15 +23,12 @@ else
 endif
 
 # Main target
-all: zsh starship fish git tmux $(PLATFORM_TARGETS)
+all: zsh starship fish tmux $(PLATFORM_TARGETS)
 	@echo "✓ All packages installed"
 
 # Individual packages
 fish:
 	@$(STOW) $(STOW_FLAGS) -t $(TARGET) fish
-
-git:
-	@$(STOW) $(STOW_FLAGS) -t $(TARGET) git
 
 ghostty:
 	@$(STOW) $(STOW_FLAGS) -t $(TARGET) ghostty
@@ -59,7 +56,7 @@ skills:
 # Maintenance
 clean:
 	@echo "Removing symlinks..."
-	-@$(STOW) -D -t $(TARGET) zsh starship fish git tmux 2>/dev/null || true
+	-@$(STOW) -D -t $(TARGET) zsh starship fish tmux 2>/dev/null || true
 	-@$(STOW) -D -t $(TARGET) ghostty 2>/dev/null || true
 	-@$(STOW) -D -t $(SKILLS_CODEX_DIR) skills 2>/dev/null || true
 	-@$(STOW) -D -t $(SKILLS_CLAUDE_DIR) skills 2>/dev/null || true
@@ -74,7 +71,6 @@ help:
 	@echo "Targets:"
 	@printf "  %-15s  %s\n" "all" "Install core packages (default)"
 	@printf "  %-15s  %s\n" "fish" "Install Fish shell config"
-	@printf "  %-15s  %s\n" "git" "Install Git config"
 	@printf "  %-15s  %s\n" "ghostty" "Install Ghostty terminal config"
 	@printf "  %-15s  %s\n" "macos-defaults" "Install macOS defaults"
 	@printf "  %-15s  %s\n" "starship" "Install Starship prompt"
@@ -85,4 +81,4 @@ help:
 	@printf "  %-15s  %s\n" "help" "Show this help"
 	@echo ""
 
-.PHONY: all fish git ghostty macos-defaults starship tmux zsh skills clean help
+.PHONY: all fish ghostty macos-defaults starship tmux zsh skills clean help
