@@ -37,7 +37,7 @@ For complete project workflows including tooling setup, see the `python-project`
 **Error Handling:**
 - Use specific exception types; avoid bare `except`
 - Create custom exceptions for domain errors
-- Include enough context to debug without leaking secrets 
+- Include enough context to debug without leaking secrets
 
 ## Style Guidelines
 
@@ -60,10 +60,10 @@ For complete project workflows including tooling setup, see the `python-project`
   ```python
   import os
   from pathlib import Path
-  
+
   import requests
   from loguru import logger
-  
+
   from myapp.utils import helper
   ```
 

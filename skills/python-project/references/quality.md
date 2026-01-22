@@ -160,25 +160,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Install uv
         uses: astral-sh/setup-uv@v3
-      
+
       - name: Set up Python
         run: uv python install 3.12
-      
+
       - name: Install dependencies
         run: uv sync --all-extras --dev
-      
+
       - name: Lint
         run: uv run ruff check .
-      
+
       - name: Format check
         run: uv run ruff format --check .
-      
+
       - name: Type check
         run: uv run ty check
-      
+
       - name: Test
         run: uv run pytest --cov=src --cov-report=xml
 ```

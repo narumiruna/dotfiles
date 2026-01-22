@@ -19,7 +19,7 @@ app = typer.Typer()
 @app.command()
 def greet(name: str, count: int = 1) -> None:
     """Greet someone multiple times.
-    
+
     Args:
         name: Person to greet
         count: Number of times to greet (default: 1)

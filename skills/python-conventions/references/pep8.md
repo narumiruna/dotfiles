@@ -48,11 +48,11 @@ arg4, arg5)
 ```python
 class MyClass:
     """A class."""
-    
+
     def __init__(self):
         """Initialize."""
         pass
-    
+
     def method(self):
         """A method."""
         pass
@@ -156,11 +156,11 @@ z=x*2-1
 # Good naming
 class UserAccount:
     MAX_CONNECTIONS = 100
-    
+
     def __init__(self):
         self._internal_id = None
         self.user_name = None
-    
+
     def get_user_name(self):
         return self.user_name
 
@@ -206,14 +206,14 @@ def simple_function():
 
 def complex_function(arg1, arg2):
     """Do something complex.
-    
+
     This function performs a complex operation that requires
     multiple parameters and detailed explanation.
-    
+
     Args:
         arg1: First argument description
         arg2: Second argument description
-        
+
     Returns:
         Description of return value
     """
