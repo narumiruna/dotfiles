@@ -31,6 +31,8 @@ alias gds="git diff --staged"
 
 alias extract="ouch decompress -y"
 
+alias grep="rg"
+
 path=("$HOME/.cargo/bin" $path)
 
 # macOS
