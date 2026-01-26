@@ -18,7 +18,7 @@ $time\
 [ ](fg:#1d2230)\
 $character\
 """
-right_format = """$status"""
+right_format = """$status$hostname"""
 add_newline = false
 
 [directory]
@@ -75,3 +75,7 @@ use_12hr = true
 
 [status]
 disabled = false
+
+[hostname]
+ssh_only = false
+format = "[$ssh_symbol$hostname]($style)"
