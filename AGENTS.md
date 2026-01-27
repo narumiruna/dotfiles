@@ -4,14 +4,12 @@
 This repo contains dotfiles organized by tool, intended to be symlinked with GNU Stow.
 - Top-level packages: `zsh/`, `fish/`, `tmux/`, `starship/`, `ghostty/`, `macos-defaults/`
 - Each directory mirrors the target path under `$HOME` (e.g., `zsh/.zshrc`).
-- `skills/` contains Codex/Claude skill bundles with subdirectories for different skill types.
 
 ## Build, Test, and Development Commands
 All management is via `make` and `stow`.
 - `make` or `make all`: symlink `zsh`, `starship`, `fish`, `tmux` into `~`.
 - `make macos-defaults`: symlink macOS-specific defaults into `~`.
 - `make ghostty`: symlink Ghostty config into `~`.
-- `make skills`: install skills into `~/.codex/skills` and `~/.claude/skills`.
 Examples:
 - `make zsh` (install only Zsh config)
 - `make starship` (install only Starship prompt)
