@@ -18,20 +18,7 @@ source $ZSH/oh-my-zsh.sh
 export LANG=C.UTF-8
 export EDITOR='vim'
 
-alias ls="lsd"
-alias lsa="lsd -lah"
-alias l="lsd -lah"
-alias ll="lsd -lh"
-alias la="lsd -lAh"
-
-alias gst="git status"
-alias gph="git push origin HEAD"
-alias gd="git diff"
-alias gds="git diff --staged"
-
-alias extract="ouch decompress -y"
-
-alias grep="rg"
+source $HOME/.config/zsh/alias.zsh
 
 path=("$HOME/.cargo/bin" $path)
 
