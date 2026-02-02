@@ -22,7 +22,7 @@ ghostty:
 
 # Install macOS defaults
 macos-defaults:
-    macos-defaults/macos-defaults.sh
+    sh macos-defaults/macos-defaults.sh
 
 # Install Starship prompt
 starship:
