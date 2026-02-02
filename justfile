@@ -1,7 +1,7 @@
 # Justfile for dotfiles management using GNU Stow
 
 stow_flags := "--restow -v"
-target := "~"
+target := env('HOME') # "~/"
 linux-dotfiles := "zsh starship fish tmux"
 macos-dotfiles := "macos-defaults ghostty"
 
