@@ -2,14 +2,15 @@
 
 stow_flags := "--restow -v"
 target := "~"
+linux-dotfiles := "zsh starship fish tmux"
+macos-dotfiles := "macos-defaults ghostty"
 
 # Install core packages (default)
 all:
-  just zsh starship fish tmux
+  just {{linux-dotfiles}}
   if [ "{{os()}}" = "macos" ]; then \
-    just macos-defaults ghostty; \
+    just {{macos-dotfiles}}; \
   fi
-  echo "✓ All packages installed"
 
 # Install Fish shell config
 fish:
@@ -37,7 +38,5 @@ zsh:
 
 # Remove all symlinks
 clean:
-  echo "Removing symlinks..."
-  stow -D -t {{target}} zsh starship fish tmux 2>/dev/null || true
-  stow -D -t {{target}} ghostty 2>/dev/null || true
-  echo "✓ Cleanup complete"
+  stow -D -t {{target}} {{linux-dotfiles}} 2>/dev/null || true
+  stow -D -t {{target}} {{macos-dotfiles}} 2>/dev/null || true
