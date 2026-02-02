@@ -5,8 +5,8 @@ target := env('HOME')
 linux-dotfiles := "zsh starship fish tmux"
 macos-dotfiles := "macos-defaults ghostty"
 
-# Install core packages (default)
-all:
+# Install core packages
+default:
     just {{ linux-dotfiles }}
     if [ "{{ os() }}" = "macos" ]; then \
       just {{ macos-dotfiles }}; \
