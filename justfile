@@ -11,8 +11,8 @@ default:
       just macos-defaults ghostty; \
     fi
 
-# Install required tools
-install:
+# Install required Cargo packages
+cargo:
     cargo install --locked atuin
     cargo install --locked bat
     cargo install --locked fd-find
@@ -23,7 +23,10 @@ install:
     cargo install --locked starship
     # cargo install --locked uv
     cargo install --locked zoxide
-    # git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+
+# Install required Git repositories
+git:
+    git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
 # Install Fish shell config
 fish:
