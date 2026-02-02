@@ -6,10 +6,24 @@ dotfiles := "zsh starship fish tmux"
 
 # Install core packages
 default:
-    just {{ default-dotfiles }}
+    just {{ dotfiles }}
     if [ "{{ os() }}" = "macos" ]; then \
       just macos-defaults ghostty; \
     fi
+
+# Install required tools
+install:
+    cargo install --locked atuin
+    cargo install --locked bat
+    cargo install --locked fd-find
+    cargo install --locked fnm
+    cargo install --locked lsd
+    cargo install --locked ouch
+    cargo install --locked ripgrep
+    cargo install --locked starship
+    # cargo install --locked uv
+    cargo install --locked zoxide
+    # git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
 # Install Fish shell config
 fish:
@@ -37,5 +51,5 @@ macos-defaults:
 
 # Remove all symlinks
 clean:
-    stow -D -t {{ target }} {{ default-dotfiles }} 2>/dev/null || true
+    stow -D -t {{ target }} {{ dotfiles }} 2>/dev/null || true
     stow -D -t {{ target }} ghostty 2>/dev/null || true
