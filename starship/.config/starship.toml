@@ -29,12 +29,12 @@ disabled = false
 Ubuntu = ""
 Macos = ""
 
-[shell]
-format = "[$indicator](bg:#a3aed2 fg:#090c0c)"
-bash_indicator = ""
-zsh_indicator = ""
-fish_indicator = "󰈺"
-disabled = false
+# [shell]
+# format = "[$indicator](bg:#a3aed2 fg:#090c0c)"
+# bash_indicator = ""
+# zsh_indicator = ""
+# fish_indicator = "󰈺"
+# disabled = false
 
 [directory]
 style = "fg:#e3e5e5 bg:#769ff0"
