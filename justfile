@@ -30,12 +30,6 @@ install-deps:
     curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
     curl -LsSf https://astral.sh/uv/install.sh | sh
     curl -sS https://starship.rs/install.sh | sh
-    if [ "{{ os() }}" = "macos" ]; then \
-      brew install stow; \
-    fi
-
-# Install required Git repositories
-git:
     git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
 # Install Atuin shell history config
