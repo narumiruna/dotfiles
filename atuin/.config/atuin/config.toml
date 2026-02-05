@@ -5,8 +5,36 @@ enter_accept = true
 style = "auto"
 store_failed = false
 
+[stats]
+common_subcommands = [
+  "uv",
+  "apt",
+  "cargo",
+  "composer",
+  "dnf",
+  "docker",
+  "git",
+  "go",
+  "ip",
+  "jj",
+  "kubectl",
+  "nix",
+  "nmcli",
+  "npm",
+  "pecl",
+  "pnpm",
+  "podman",
+  "port",
+  "systemctl",
+  "tmux",
+  "yarn",
+]
+
 [sync]
 records = true
+
+[dotfiles]
+enabled = true
 
 # https://docs.atuin.sh/cli/guide/theming/
 [theme]
