@@ -4,13 +4,18 @@ stow_flags := "--restow -v"
 target := env('HOME')
 dotfiles := "atuin zsh starship fish tmux"
 
-# Install core packages
+# Install all dotfiles
 [default]
 stow-all:
     just {{ dotfiles }}
     if [ "{{ os() }}" = "macos" ]; then \
       just macos-defaults ghostty; \
     fi
+
+# Uninstall all dotfiles
+stow-delete:
+    stow -D -t {{ target }} {{ dotfiles }} 2>/dev/null || true
+    stow -D -t {{ target }} ghostty 2>/dev/null || true
 
 # Install required Cargo packages
 cargo:
@@ -63,8 +68,3 @@ ghostty:
 # Reset launchpad and .DS_Store settings on macOS
 macos-defaults:
     sh macos-defaults/macos-defaults.sh
-
-# Remove all symlinks
-clean:
-    stow -D -t {{ target }} {{ dotfiles }} 2>/dev/null || true
-    stow -D -t {{ target }} ghostty 2>/dev/null || true
