@@ -30,7 +30,7 @@ source $HOME/.config/zsh/fnm.zsh
 
 path=("$HOME/.local/bin/env" $path)
 
-eval "$(starship init zsh)"
-
 # remove duplicate entries in PATH
 path=(${(u)path})
+
+eval "$(starship init zsh)"
