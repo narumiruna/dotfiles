@@ -9,7 +9,7 @@ dotfiles := "atuin zsh starship fish tmux"
 install:
     just {{ dotfiles }}
     if [ "{{ os() }}" = "macos" ]; then \
-      just macos-defaults ghostty; \
+      just ghostty; \
     fi
 
 # Uninstall all dotfiles
