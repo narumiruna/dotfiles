@@ -1,7 +1,7 @@
 "$schema" = "https://starship.rs/config-schema.json"
 format = """
 [░▒▓](#a3aed2)\
-[  ](bg:#a3aed2 fg:#090c0c)\
+[ $shell](bg:#a3aed2 fg:#090c0c)\
 [](bg:#769ff0 fg:#a3aed2)\
 $directory\
 [](fg:#769ff0 bg:#394260)\
@@ -20,6 +20,13 @@ $character\
 """
 right_format = """$status$hostname"""
 add_newline = false
+
+[shell]
+format = "[$indicator](bg:#a3aed2 fg:#090c0c)"
+bash_indicator = ""
+zsh_indicator = ""
+fish_indicator = "󰈺"
+disabled = false
 
 [directory]
 style = "fg:#e3e5e5 bg:#769ff0"
