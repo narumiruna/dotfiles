@@ -7,7 +7,6 @@ store_failed = false
 
 [stats]
 common_subcommands = [
-  "uv",
   "apt",
   "cargo",
   "composer",
@@ -27,6 +26,7 @@ common_subcommands = [
   "port",
   "systemctl",
   "tmux",
+  "uv",
   "yarn",
 ]
 
