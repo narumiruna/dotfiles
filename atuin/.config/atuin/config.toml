@@ -3,6 +3,7 @@
 search_mode = "skim"
 enter_accept = true
 style = "auto"
+store_failed = false
 
 [sync]
 records = true
