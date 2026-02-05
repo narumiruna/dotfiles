@@ -2,10 +2,11 @@
 
 stow_flags := "--restow -v"
 target := env('HOME')
-dotfiles := "zsh starship fish tmux"
+dotfiles := "atuin zsh starship fish tmux"
 
 # Install core packages
-default:
+[default]
+install:
     just {{ dotfiles }}
     if [ "{{ os() }}" = "macos" ]; then \
       just macos-defaults ghostty; \
@@ -28,27 +29,37 @@ cargo:
 git:
     git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
+# Install Atuin shell history config
+[group('config')]
+atuin:
+    stow {{ stow_flags }} -t {{ target }} atuin
+
 # Install Fish shell config
+[group('config')]
 fish:
     stow {{ stow_flags }} -t {{ target }} fish
 
 # Install Starship prompt
+[group('config')]
 starship:
     stow {{ stow_flags }} -t {{ target }} starship
 
 # Install Tmux config
+[group('config')]
 tmux:
     stow {{ stow_flags }} -t {{ target }} tmux
 
 # Install Zsh config
+[group('config')]
 zsh:
     stow {{ stow_flags }} -t {{ target }} zsh
 
 # Install Ghostty terminal config
+[group('config')]
 ghostty:
     stow {{ stow_flags }} -t {{ target }} ghostty
 
-# Install macOS defaults
+# Reset launchpad and .DS_Store settings on macOS
 macos-defaults:
     sh macos-defaults/macos-defaults.sh
 
