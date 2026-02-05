@@ -14,6 +14,7 @@ install:
 
 # Install required Cargo packages
 cargo:
+    # cargo install --locked uv
     cargo install --locked atuin
     cargo install --locked bat
     cargo install --locked fd-find
@@ -21,8 +22,8 @@ cargo:
     cargo install --locked lsd
     cargo install --locked ouch
     cargo install --locked ripgrep
+    cargo install skim --no-default-features --features cli
     cargo install --locked starship
-    # cargo install --locked uv
     cargo install --locked zoxide
 
 # Install required Git repositories
