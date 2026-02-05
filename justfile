@@ -62,6 +62,17 @@ zsh:
 ghostty:
     stow {{ stow_flags }} -t {{ target }} ghostty
 
-# Reset launchpad and .DS_Store settings on macOS
-macos-defaults:
-    sh macos-defaults/macos-defaults.sh
+# Reset launchpad on macOS
+[group('macos')]
+reset-launchpad:
+    if [ "{{ os() }}" = "macos" ]; then \
+        defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock; \
+    fi
+
+# Disable .DS_Store file creation on network and USB drives on macOS
+[group('macos')]
+disable-dsstore:
+    if [ "{{ os() }}" = "macos" ]; then \
+        defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true; \
+        defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true; \
+    fi
