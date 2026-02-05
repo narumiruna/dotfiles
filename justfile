@@ -6,14 +6,14 @@ dotfiles := "atuin zsh starship fish tmux"
 
 # Install all dotfiles
 [default]
-stow-all:
+install:
     just {{ dotfiles }}
     if [ "{{ os() }}" = "macos" ]; then \
       just macos-defaults ghostty; \
     fi
 
 # Uninstall all dotfiles
-stow-delete:
+clean:
     stow -D -t {{ target }} {{ dotfiles }} 2>/dev/null || true
     stow -D -t {{ target }} ghostty 2>/dev/null || true
 
