@@ -17,10 +17,8 @@ clean:
     stow -D -t {{ target }} {{ dotfiles }} 2>/dev/null || true
     stow -D -t {{ target }} ghostty 2>/dev/null || true
 
-# Install required Cargo packages
-cargo:
-    # cargo install --locked uv
-    cargo install --locked atuin
+# Install required dependencies
+install-deps:
     cargo install --locked bat
     cargo install --locked fd-find
     cargo install --locked fnm
@@ -28,8 +26,10 @@ cargo:
     cargo install --locked ouch
     cargo install --locked ripgrep
     cargo install --locked skim --no-default-features --features cli
-    cargo install --locked starship
     cargo install --locked zoxide
+    curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    curl -sS https://starship.rs/install.sh | sh
 
 # Install required Git repositories
 git:
