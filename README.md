@@ -9,13 +9,20 @@ sudo apt install -y stow
 
 # macOS (using Homebrew)
 brew install stow
+
+# justfile
+cargo install --locked just
 ```
 
 ## Usage
 
 ```shell
-make all
+# List all available recipes
+just -l
 
-# See all available options
-make help
+# Install all dotfiles
+just
+
+# Uninstall all dotfiles
+just clean
 ```
