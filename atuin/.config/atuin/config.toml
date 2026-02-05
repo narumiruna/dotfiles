@@ -8,4 +8,4 @@ records = true
 
 # https://docs.atuin.sh/cli/guide/theming/
 [theme]
-name = "autumn"
+name = "default"
