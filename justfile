@@ -6,7 +6,7 @@ dotfiles := "atuin zsh starship fish tmux"
 
 # Install core packages
 [default]
-install:
+stow-all:
     just {{ dotfiles }}
     if [ "{{ os() }}" = "macos" ]; then \
       just macos-defaults ghostty; \
@@ -22,7 +22,7 @@ cargo:
     cargo install --locked lsd
     cargo install --locked ouch
     cargo install --locked ripgrep
-    cargo install skim --no-default-features --features cli
+    cargo install --locked skim --no-default-features --features cli
     cargo install --locked starship
     cargo install --locked zoxide
 
