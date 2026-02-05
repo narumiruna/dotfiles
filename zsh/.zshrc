@@ -34,5 +34,3 @@ eval "$(starship init zsh)"
 
 # remove duplicate entries in PATH
 path=(${(u)path})
-
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
