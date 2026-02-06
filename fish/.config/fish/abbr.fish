@@ -13,4 +13,8 @@ abbr -a extract 'ouch decompress -y'
 
 abbr -a grep 'rg'
 
+abbr -a zz 'zellij'
+abbr -a za 'zellij attach'
+abbr -a zls 'zellij list-sessions'
+
 # abbr -a cat 'bat'
