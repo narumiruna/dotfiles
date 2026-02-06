@@ -12,3 +12,7 @@ alias gds="git diff --staged"
 alias extract="ouch decompress -y"
 
 alias grep="rg"
+
+alias zz="zellij"
+alias za="zellij attach"
+alias zls="zellij list-sessions"
