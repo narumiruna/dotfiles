@@ -17,7 +17,7 @@ $time\
 [](fg:#1d2230)\
 $character\
 """
-right_format = """$status$hostname"""
+right_format = """$hostname"""
 add_newline = false
 
 [os]
@@ -81,9 +81,6 @@ disabled = false
 style = "bg:#1d2230"
 format = "[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)"
 use_12hr = true
-
-[status]
-disabled = false
 
 [hostname]
 ssh_only = false
