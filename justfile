@@ -27,6 +27,7 @@ install-deps:
     cargo install --locked ripgrep
     cargo install --locked skim --no-default-features --features cli
     cargo install --locked zoxide
+    cargo install --locked zellij
     curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
     curl -LsSf https://astral.sh/uv/install.sh | sh
     curl -sS https://starship.rs/install.sh | sh
