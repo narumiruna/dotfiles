@@ -28,7 +28,7 @@ source $HOME/.config/zsh/bun.zsh
 source $HOME/.config/zsh/pyenv.zsh
 source $HOME/.config/zsh/fnm.zsh
 
-path=("$HOME/.local/bin/env" $path)
+path=("$HOME/.local/bin" $path)
 
 # remove duplicate entries in PATH
 path=(${(u)path})
