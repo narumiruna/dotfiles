@@ -20,6 +20,7 @@ $character\
 """
 right_format = """$hostname"""
 add_newline = false
+scan_timeout = 60  # milliseconds, default is 30
 
 [os]
 format = "[$symbol](bg:#a3aed2 fg:#090c0c)"
