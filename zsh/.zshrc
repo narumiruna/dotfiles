@@ -34,3 +34,4 @@ path=("$HOME/.local/bin" $path)
 path=(${(u)path})
 
 eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
