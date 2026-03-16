@@ -12,6 +12,7 @@ ${custom.uv}\
 $nodejs\
 $rust\
 $golang\
+$package\
 [](fg:#212736 bg:#1d2230)\
 $time\
 [](fg:#1d2230)\
@@ -82,6 +83,9 @@ format = "[[ $symbol ($version)](fg:#769ff0 bg:#212736)]($style)"
 symbol = ""
 style = "bg:#212736"
 format = "[[ $symbol ($version)](fg:#769ff0 bg:#212736)]($style)"
+
+[package]
+format = "[[  $version](bg:#212736 fg:#769ff0)]($style)"
 
 [time]
 disabled = false
