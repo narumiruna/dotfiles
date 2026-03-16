@@ -11,7 +11,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export LANG=C.UTF-8
+export LANG=en_US.UTF-8
 export EDITOR='vim'
 
 source $HOME/.config/zsh/alias.zsh
