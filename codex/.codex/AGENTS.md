@@ -41,8 +41,5 @@
 - `GOTCHA.md` MUST NOT be assumed to be auto-loaded.
 - Before debugging or proposing fixes, the agent MUST search the repository for gotchas.
 - The agent MUST first look for `GOTCHA.md` (case-sensitive) in the project root.
-- If root `GOTCHA.md` is not found, the agent MUST search for any file named `*GOTCHA*.md`.
-- If no GOTCHA file exists, the agent MUST immediately create `./GOTCHA.md` (project root).
-- After creating `GOTCHA.md`, the agent MUST continue the task and append a new entry only if a real non-obvious pitfall was discovered during the current session.
 - If a GOTCHA file exists, the agent MUST read relevant entries and explicitly apply them in diagnosis and proposed fixes.
-- Create or update a `GOTCHA.md` entry only for **non-obvious, experience-derived pitfalls** that required debugging to understand.
+- If the agent makes a mistake during the task, the agent MUST create `./GOTCHA.md` first when it does not exist, then add or update a `GOTCHA.md` entry in the same session; the entry MUST describe only **non-obvious, experience-derived pitfalls** that required debugging to understand.
