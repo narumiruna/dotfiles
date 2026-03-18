@@ -1,15 +1,19 @@
-## Language and Style
+## Communication
 
-- Documentation **MUST** be written in clear, standard English following established conventions.
-- Communication **MUST** be clear and easily understandable in Taiwan Traditional Chinese.
-- Ask me only one question at a time to avoid confusion.
-- Enumerate options when providing multiple choices.
+- User-facing communication MUST be written in Taiwan Traditional Chinese unless explicitly requested otherwise.
+- Documentation MUST be written in clear, standard English.
+- Ask at most one clarifying question at a time.
+- Do not ask a clarifying question when a reasonable assumption allows safe progress.
+- When presenting multiple options, enumerate them explicitly.
 
-## Code Quality Checks
+## Verification
 
-- If `.pre-commit-config.yaml` exists, all code changes **MUST** pass `prek run -a` before completion; otherwise, no pre-commit check is required.
+- All generated code and proposed changes MUST be treated as untrusted until validated.
+- Claims about third-party packages, SDKs, APIs, or frameworks MUST be verified against authoritative sources before being relied upon.
+- Authoritative sources MUST be limited to official vendor or project documentation, or relevant standards body documentation.
+- Suggested commands or environment changes MUST be reviewed for local compatibility before execution.
 
-## Principles
+## Engineering Principles
 
 - Language MUST be concise and precise.
 - Design and structure MUST NOT introduce unnecessary complexity.
@@ -18,21 +22,28 @@
 - Rules MUST be stated in enforceable terms and avoid ambiguity.
 - Foundational rules MUST NOT be duplicated across documents.
 
-## Fundamental Constraints
+## Architectural Constraints
 
-- All outputs and changes MUST be treated as untrusted unless and until explicitly verified.
-- Abstractions MUST address a concrete, current problem that exists at the time of introduction.
 - Architectural boundaries defined by the project MUST NOT be violated.
 - New dependencies MUST NOT be introduced without explicit justification.
+- New abstractions MUST be introduced only to solve a concrete, current problem.
+- Abstract interfaces MUST NOT be added for speculative future use alone.
+
+## Code Quality Checks
+
+- If `.pre-commit-config.yaml` exists and the task changes code or configuration files, all changes MUST pass `prek run -a` before completion.
+- If `prek` is unavailable, `pre-commit run -a` MUST be used instead.
+- If checks fail, the failure MUST be reported explicitly.
 
 ## Python
 
 - Use `uv` for package management and script execution.
-- Use `ruff` for code formatting and linting.
+- Use `ruff` for formatting and linting.
 - Use `ty` for type checking.
+- New Python dependencies MUST NOT be added without explicit justification.
 
-## Skills and Tools
+## Knowledge Retrieval Workflow
 
-- When code depends on third-party packages, the agent MUST first attempt retrieval via `porthub`.
-- If `porthub` is insufficient, the agent MAY use `firecrawl` to retrieve authoritative documentation.
-- Newly retrieved external documentation SHOULD be stored back into `porthub` when it is stable, relevant, and worth reusing.
+- When code depends on third-party packages, SDKs, APIs, or frameworks, the agent MUST first attempt retrieval via `porthub`.
+- If `porthub` is insufficient, the agent MUST retrieve authoritative documentation via `firecrawl`.
+- Retrieved documentation SHOULD be stored back into `porthub` only when it is stable, reusable, and specific enough to justify maintenance.
