@@ -42,12 +42,6 @@
 - Use `ty` for type checking.
 - New Python dependencies MUST NOT be added without explicit justification.
 
-## Knowledge Retrieval Workflow
-
-- When code depends on third-party packages, SDKs, APIs, or frameworks, the agent MUST first attempt retrieval via `porthub`.
-- If `porthub` is insufficient, the agent MUST retrieve authoritative documentation via `firecrawl`.
-- Retrieved documentation SHOULD be stored back into `porthub` only when it is stable, reusable, and specific enough to justify maintenance.
-
 ## Gotcha
 
 - `GOTCHA.md` MUST NOT be assumed to be auto-loaded.
