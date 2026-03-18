@@ -50,8 +50,10 @@
 
 ## Gotcha
 
-- Create a `GOTCHA.md` entry when encountering a **non-obvious, experience-derived pitfall** that required debugging to understand.
-- Each entry MUST describe a **single, specific issue** with clear symptom, cause, and fix.
-- Write concisely; avoid explanations beyond what is necessary to reproduce and resolve the issue.
+- `GOTCHA.md` MUST NOT be assumed to be auto-loaded.
+- When debugging or investigating unexpected behavior, the agent MUST query gotchas via repository search or equivalent retrieval before proceeding.
+- If relevant entries exist, the agent MUST incorporate them into diagnosis and proposed fixes.
+- Create or update a `GOTCHA.md` entry only for **non-obvious, experience-derived pitfalls** that required debugging to understand.
+- Each entry MUST describe a single issue with clear symptom, cause, and fix.
 - Do NOT include general documentation, tutorials, or obvious behavior.
-- Update an existing entry instead of creating a duplicate if the pitfall already exists.
+- Avoid duplication; update existing entries when applicable.
