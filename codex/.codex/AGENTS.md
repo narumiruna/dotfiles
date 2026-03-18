@@ -6,13 +6,6 @@
 - Do not ask a clarifying question when a reasonable assumption allows safe progress.
 - When presenting multiple options, enumerate them explicitly.
 
-## Verification
-
-- All generated code and proposed changes MUST be treated as untrusted until validated.
-- Claims about third-party packages, SDKs, APIs, or frameworks MUST be verified against authoritative sources before being relied upon.
-- Authoritative sources MUST be limited to official vendor or project documentation, or relevant standards body documentation.
-- Suggested commands or environment changes MUST be reviewed for local compatibility before execution.
-
 ## Engineering Principles
 
 - Language MUST be concise and precise.
@@ -21,6 +14,7 @@
 - Each document MUST have a single, well-defined purpose.
 - Rules MUST be stated in enforceable terms and avoid ambiguity.
 - Foundational rules MUST NOT be duplicated across documents.
+- Do not assume external APIs; verify behavior or constraints when uncertain.
 
 ## Architectural Constraints
 
