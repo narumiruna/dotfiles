@@ -33,5 +33,6 @@
 
 ## Skills and Tools
 
-- Always use `porthub` skill and cli to retrieve and maintain local knowledge before generating code that relies on third-party packages, SDKs, APIs, or frameworks.
-- Always use `firecrawl` mcp to retrieve API documents if `porthub` does not have the necessary information. After retrieving API documents, use `porthub` to store the retrieved information for future reference.
+- When code depends on third-party packages, the agent MUST first attempt retrieval via `porthub`.
+- If `porthub` is insufficient, the agent MAY use `firecrawl` to retrieve authoritative documentation.
+- Newly retrieved external documentation SHOULD be stored back into `porthub` when it is stable, relevant, and worth reusing.
