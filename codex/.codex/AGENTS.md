@@ -47,3 +47,11 @@
 - When code depends on third-party packages, SDKs, APIs, or frameworks, the agent MUST first attempt retrieval via `porthub`.
 - If `porthub` is insufficient, the agent MUST retrieve authoritative documentation via `firecrawl`.
 - Retrieved documentation SHOULD be stored back into `porthub` only when it is stable, reusable, and specific enough to justify maintenance.
+
+## Gotcha
+
+- Create a `GOTCHA.md` entry when encountering a **non-obvious, experience-derived pitfall** that required debugging to understand.
+- Each entry MUST describe a **single, specific issue** with clear symptom, cause, and fix.
+- Write concisely; avoid explanations beyond what is necessary to reproduce and resolve the issue.
+- Do NOT include general documentation, tutorials, or obvious behavior.
+- Update an existing entry instead of creating a duplicate if the pitfall already exists.
