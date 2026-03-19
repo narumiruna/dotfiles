@@ -89,7 +89,7 @@ Because there are no formal tests, treat these as single-target validations:
 - New shell fragment filenames: lowercase, descriptive, extension by shell.
   - Fish: `.fish` in `fish/.config/fish/conf.d/`.
   - Zsh: `.zsh` in `zsh/.config/zsh/`.
-- Keep names short but specific, e.g. `pyenv.zsh`, `bun.fish`.
+- Keep names short but specific, e.g. `pyenv.zsh`.
 - For TOML keys, follow upstream tool schema naming.
 
 ### Imports / sourcing / load order
