@@ -23,7 +23,6 @@ source $HOME/.config/zsh/brew.zsh
 source $HOME/.config/zsh/code.zsh
 
 # common
-source $HOME/.config/zsh/atuin.zsh
 source $HOME/.config/zsh/bun.zsh
 source $HOME/.config/zsh/pyenv.zsh
 source $HOME/.config/zsh/fnm.zsh
@@ -35,3 +34,4 @@ path=(${(u)path})
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"
