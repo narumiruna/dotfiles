@@ -15,6 +15,8 @@
 - Rules MUST be stated in enforceable terms and avoid ambiguity.
 - Foundational rules MUST NOT be duplicated across documents.
 - Do not assume external APIs; verify behavior or constraints when uncertain.
+- Non-trivial changes MUST follow TDD (red→green→refactor): write a failing test, implement minimal code to pass, then refactor without changing behavior.
+- Source files MUST NOT exceed 1000 lines; files over 500 lines SHOULD be split by responsibility.
 
 ## Architectural Constraints
 
@@ -49,3 +51,7 @@
 - The agent MUST first look for `TASTE.md` (case-sensitive) in the project root.
 - If a TASTE file exists, the agent MUST read relevant entries and explicitly apply them in recommendations and implementations.
 - If the user expresses a stable preference during the task, the agent MUST create `./TASTE.md` first when it does not exist, then add or update a `TASTE.md` entry in the same session; the entry MUST describe only **concrete, reusable preference signals** that affect future decisions.
+
+## Git
+
+- Avoid using `git add -A`; instead, use precise file-level `git add <path>`.
