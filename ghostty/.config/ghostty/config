@@ -8,8 +8,3 @@ macos-option-as-alt = true
 
 # keybinds for Claude code
 keybind = shift+enter=text:\x1b\r
-
-# fix scroll for Claude code
-window-vsync = false
-shell-integration-features = no-cursor
-scrollback-limit = 1000000
