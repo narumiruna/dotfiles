@@ -5,6 +5,3 @@ window-save-state = always
 copy-on-select = true
 shell-integration = fish
 macos-option-as-alt = true
-
-# keybinds for Claude code
-keybind = shift+enter=text:\x1b\r
