@@ -17,6 +17,11 @@ clean:
     stow -D -t {{ target }} {{ dotfiles }} 2>/dev/null || true
     stow -D -t {{ target }} ghostty 2>/dev/null || true
 
+# Reinstall all dotfiles
+reinstall:
+    just clean
+    just install
+
 # Install required dependencies
 install-deps:
     cargo install --locked bat
@@ -41,7 +46,7 @@ atuin:
 # Install Fish shell config
 [group('config')]
 fish:
-    stow {{ stow_flags }} -t {{ target }} fish
+    stow {{ stow_flags }} --ignore='\.config/fish/(config\.fish|fish_variables|completions/(docker|kubectl|orbctl)\.fish)$' -t {{ target }} fish
 
 # Install Starship prompt
 [group('config')]
