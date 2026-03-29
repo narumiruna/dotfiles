@@ -2,7 +2,7 @@
 
 stow_flags := "--restow -v"
 target := env('HOME')
-dotfiles := "atuin zsh starship fish tmux agents"
+dotfiles := "atuin zsh starship fish tmux codex"
 
 # Install all dotfiles
 [default]
@@ -68,10 +68,10 @@ zsh:
 ghostty:
     stow {{ stow_flags }} -t {{ target }} ghostty
 
-# Install Agents config
+# Install Codex config
 [group('config')]
-agents:
-    stow {{ stow_flags }} -t {{ target }} agents
+codex:
+    stow {{ stow_flags }} -t {{ target }} codex
 
 # Reset launchpad on macOS
 [group('macos')]
