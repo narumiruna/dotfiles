@@ -50,7 +50,9 @@
 - `TASTE.md` MUST NOT be assumed to be auto-loaded.
 - The agent MUST first look for `TASTE.md` (case-sensitive) in the project root.
 - If a TASTE file exists, the agent MUST read relevant entries and explicitly apply them in recommendations and implementations.
-- If the user expresses a stable preference during the task, the agent MUST create `TASTE.md` first when it does not exist, then add or update a `TASTE.md` entry in the same session; the entry MUST describe only **concrete, reusable preference signals** that affect future decisions.
+- If the user requests a preference that the agent did not anticipate, the agent MUST update `TASTE.md` in the same turn.
+- If an update to `TASTE.md` is required and the file does not exist, the agent MUST create `TASTE.md` first in the project root.
+- Each `TASTE.md` entry MUST capture exactly one reusable preference signal.
 
 ## Git
 
