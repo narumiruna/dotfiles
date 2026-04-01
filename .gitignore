@@ -108,3 +108,6 @@ venv.bak/
 
 # fish
 fish/.config/fish/fish_variables
+
+# Codex
+.codex
