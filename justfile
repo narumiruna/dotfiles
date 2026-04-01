@@ -2,7 +2,7 @@
 
 stow_flags := "--restow -v"
 target := env('HOME')
-dotfiles := "atuin zsh starship fish tmux codex"
+dotfiles := "atuin zsh starship fish tmux codex opencode"
 
 # Install all dotfiles
 [default]
@@ -72,6 +72,12 @@ ghostty:
 [group('config')]
 codex:
     stow {{ stow_flags }} -t {{ target }} codex
+
+# Install OpenCode config
+[group('config')]
+opencode:
+    cp codex/.codex/AGENTS.md opencode/.config/opencode/AGENTS.md
+    stow {{ stow_flags }} -t {{ target }} opencode
 
 # Reset launchpad on macOS
 [group('macos')]
