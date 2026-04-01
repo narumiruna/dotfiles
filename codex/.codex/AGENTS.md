@@ -6,7 +6,7 @@
 - Do not ask a clarifying question when a reasonable assumption allows safe progress.
 - When presenting multiple options, enumerate them explicitly.
 
-## Engineering Principles
+## Principles
 
 - Language MUST be concise and precise.
 - Design and structure MUST NOT introduce unnecessary complexity.
@@ -16,9 +16,6 @@
 - Foundational rules MUST NOT be duplicated across documents.
 - Do not assume external APIs; verify behavior or constraints when uncertain.
 - Source files MUST NOT exceed 1000 lines; files over 500 lines SHOULD be split by responsibility.
-
-## Architectural Constraints
-
 - Architectural boundaries defined by the project MUST NOT be violated.
 - New dependencies MUST NOT be introduced without explicit justification.
 - New abstractions MUST be introduced only to solve a concrete, current problem.
