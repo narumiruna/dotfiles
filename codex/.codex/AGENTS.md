@@ -15,7 +15,6 @@
 - Rules MUST be stated in enforceable terms and avoid ambiguity.
 - Foundational rules MUST NOT be duplicated across documents.
 - Do not assume external APIs; verify behavior or constraints when uncertain.
-- Non-trivial changes MUST follow TDD (red→green→refactor): write a failing test, implement minimal code to pass, then refactor without changing behavior.
 - Source files MUST NOT exceed 1000 lines; files over 500 lines SHOULD be split by responsibility.
 
 ## Architectural Constraints
