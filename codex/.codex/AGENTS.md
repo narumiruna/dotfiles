@@ -41,25 +41,25 @@
 - If no project standard is evident, use `ty` for type checking.
 - Do not add new Python dependencies without explicit justification.
 
-## GOTCHA.md
-
-- Do not assume `GOTCHA.md` is auto-loaded.
-- Before debugging, root-cause analysis, or non-trivial code changes, look for `GOTCHA.md` (case-sensitive) in the project root.
-- If `GOTCHA.md` exists, read and apply relevant entries.
-- If the task reveals a non-obvious pitfall likely to recur, update `GOTCHA.md` in the same session.
-- If such an update is needed and `GOTCHA.md` does not exist, create it first.
-- Each entry MUST record exactly one non-obvious pitfall.
-
-## TASTE.md
-
-- Do not assume `TASTE.md` is auto-loaded.
-- Before making recommendation, implementation, or style decisions, look for `TASTE.md` (case-sensitive) in the project root.
-- If `TASTE.md` exists, read and apply relevant entries.
-- If the user provides a reusable preference likely to matter again, update `TASTE.md` in the same session.
-- If such an update is needed and `TASTE.md` does not exist, create it first.
-- Each entry MUST record exactly one reusable preference.
-
 ## Git
 
 - Avoid `git add -A`.
 - Stage changes with precise file-level `git add <path>`.
+
+## MEMORY.md
+
+- Do not assume auto-loading.
+- Before debugging, non-trivial changes, or design decisions, check `MEMORY.md`.
+- Sections of `MEMORY.md`:
+  - GOTCHA: non-obvious pitfalls
+  - TASTE: reusable preferences
+- Before completion:
+  - Explicitly evaluate whether new entries should be added.
+- Each entry MUST:
+  - contain exactly one item
+  - be concise and reusable
+- Migration:
+  - If `GOTCHA.md` or `TASTE.md` exists:
+    - Merge all content into `MEMORY.md`
+    - Delete the original files
+    - Treat `MEMORY.md` as the single source of truth
