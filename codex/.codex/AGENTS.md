@@ -1,65 +1,59 @@
 ## Communication
 
-- User-facing responses MUST be in Taiwan Traditional Chinese unless the user explicitly requests otherwise.
-- Project documentation MUST follow the language convention already used by the project; if no convention is evident, use clear, standard English.
-- Ask at most one clarifying question at a time.
-- Do not ask a clarifying question when a reasonable assumption allows safe, reversible progress.
-- When presenting multiple options, enumerate them explicitly.
+- User-facing responses MUST be in Taiwan Traditional Chinese unless explicitly requested otherwise.
+- Documentation MUST follow project language; if unspecified, use clear standard English.
+- Instruction priority: user instructions > project conventions > global defaults (unless safety conflicts).
+- If intent is clear and context is sufficient, execute directly.
+- If context is missing, proceed only with safe reversible assumptions; otherwise retrieve or ask.
+- Ask at most one clarifying question.
+- Keep outputs concise, structured, non-redundant, and option-explicit.
 
 ## Working Rules
 
-- Use concise, precise, unambiguous language.
-- Keep designs, changes, and explanations as simple as possible.
-- Make scope and responsibility boundaries explicit.
-- Keep each new document focused on a single, well-defined purpose.
-- Write rules and recommendations in enforceable terms.
-- Do not repeat foundational rules across files unless the repetition serves a clear local purpose.
-- Do not assume external APIs, behaviors, or constraints when uncertain; verify them against authoritative sources.
-- Do not violate project-defined architectural boundaries.
-- Do not introduce new dependencies without explicit justification.
-- Do not introduce new abstractions unless they solve a concrete, current problem.
-- Do not add abstract interfaces for speculative future use.
-- Keep source files under 1000 lines when practical; split files over 500 lines by responsibility when reasonable.
+- Language MUST be precise, concise, and unambiguous.
+- Keep designs simple, with explicit scope and boundaries.
+- Each document MUST have one clear purpose.
+- Rules MUST be enforceable.
+- Do NOT violate project boundaries.
+- Do NOT add dependencies without concrete justification.
+- Add abstractions only for current concrete problems.
+- Verify external APIs and constraints when uncertain.
+- Files SHOULD stay under 1000 lines; split above 500 when beneficial without compromising correctness or architecture.
+
+## Execution
+
+- Resolve prerequisites before dependent work.
+- Do NOT guess critical information; assumptions must be explicit and reversible.
+- If results are empty, retry with alternative approaches before concluding none.
+- Completion gate: requirements satisfied or blocked, claims grounded, rules/format compliant, and required checks passed.
+- Continue while additional work materially improves correctness or completeness; stop when completion gate is met and further work adds no value.
 
 ## Verification
 
-- Before claiming completion, verify that the result satisfies the user's request, stays within scope, and is consistent with the available evidence.
-- If required verification cannot be completed, state that explicitly.
-- If a check fails, report the failure explicitly instead of claiming success.
+- If verification fails, fix it or mark blocked; do not finalize.
 
-## Code Quality Checks
+## Code Quality
 
-- If `.pre-commit-config.yaml` exists and the task changes code or configuration files, run `prek run -a` before completion.
-- If `prek` is unavailable, run `pre-commit run -a` instead.
-- Do not claim completion if required checks fail.
+- If `.pre-commit-config.yaml` exists and code/config files changed, run `prek run -a` (fallback: `pre-commit run -a`).
 
 ## Python
 
-- Follow the project's existing Python tooling when it is already defined.
-- If no project standard is evident, use `uv` for package management and script execution.
-- If no project standard is evident, use `ruff` for formatting and linting.
-- If no project standard is evident, use `ty` for type checking.
-- Do not add new Python dependencies without explicit justification.
+- Follow project-defined tooling first.
+- Otherwise use:
+  - `uv` for execution and package management
+  - `ruff` for formatting and linting
+  - `ty` for type checking
 
 ## Git
 
-- Avoid `git add -A`.
-- Stage changes with precise file-level `git add <path>`.
+- `git add -A` MUST NOT be used.
+- Stage changes explicitly with `git add <path>`.
 
 ## MEMORY.md
 
-- Do not assume auto-loading.
-- Before debugging, non-trivial changes, or design decisions, check `MEMORY.md`.
-- Sections of `MEMORY.md`:
-  - GOTCHA: non-obvious pitfalls
-  - TASTE: reusable preferences
-- Before completion:
-  - Explicitly evaluate whether new entries should be added.
-- Each entry MUST:
-  - contain exactly one item
-  - be concise and reusable
-- Migration:
-  - If `GOTCHA.md` or `TASTE.md` exists:
-    - Merge all content into `MEMORY.md`
-    - Delete the original files
-    - Treat `MEMORY.md` as the single source of truth
+- Not auto-loaded; check it before debugging or design decisions.
+- Entry categories:
+  - `GOTCHA`: recurring pitfalls
+  - `TASTE`: reusable preferences
+- After non-trivial errors or discoveries, consider adding one entry that is concise, reusable, exactly one item, and category-tagged.
+- Migrate `GOTCHA.md` and `TASTE.md` into `MEMORY.md`, then delete the legacy files.
