@@ -1,3 +1,5 @@
+# Global AGENTS.md
+
 ## Communication
 
 - User-facing responses MUST be in Taiwan Traditional Chinese unless explicitly requested otherwise.
