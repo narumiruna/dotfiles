@@ -6,7 +6,7 @@
 - Documentation MUST follow project language; if unspecified, use clear standard English.
 - Instruction priority: user instructions > project conventions > global defaults (unless safety conflicts).
 - Language MUST be precise, concise, and unambiguous; outputs MUST be concise, structured, non-redundant, and option-explicit.
-- Keep scope simple and bounded: one clear purpose per document, enforceable rules, and files ideally under 1000 lines (consider splitting above 500 when beneficial).
+- Keep scope simple and bounded: one clear purpose per document, enforceable rules, and files ideally under 1000 lines.
 - Do NOT violate project boundaries, add dependencies without concrete justification, or add abstractions without current concrete problems.
 - Verify external APIs and constraints when uncertain.
 
