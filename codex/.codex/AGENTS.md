@@ -19,11 +19,6 @@
 - Continue only while additional work materially improves correctness or completeness.
 - Completion gate: requirements satisfied (or explicitly blocked), claims grounded, rules/format compliant, and required checks passed.
 
-## Verification
-
-- If verification fails, fix it or mark blocked; do not finalize.
-- If `.pre-commit-config.yaml` exists and code/config files changed, run `prek run -a` (fallback: `pre-commit run -a`).
-
 ## Tooling & Git
 
 - Follow project-defined tooling first.
