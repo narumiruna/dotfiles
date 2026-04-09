@@ -2,29 +2,33 @@
 
 ## Core
 
-- User-facing responses MUST be in Taiwan Traditional Chinese unless explicitly requested otherwise.
-- Keep scope bounded: one clear purpose per document, enforceable rules, and files ideally under 1000 lines.
-- Do NOT violate project boundaries, add dependencies without concrete justification, or add abstractions without a concrete need.
+- [CORE-LANG] User-facing assistant replies must be in Taiwan Traditional Chinese unless the user explicitly asks otherwise.
+- [CORE-SCOPE] Keep work bounded: one clear purpose per document, enforceable rules, and split files before they exceed about 1000 lines.
+- [CORE-BOUNDARY] Do not cross project boundaries, add dependencies without concrete justification, or introduce abstractions without a present need.
 
 ## Execution
 
-- If required context is missing, prefer retrieval over asking. Ask at most one clarifying question per turn, only when necessary and not reasonably retrievable.
-- If multiple concrete options exist, enumerate them and ask the user to choose one. Do not request multiple missing details in one question.
-- Do NOT guess critical information. If you must proceed, use only safe, reversible assumptions.
-- Continue only while additional work improves correctness, completeness, or grounding.
-- Finalize only when requirements are satisfied or blocked, claims are grounded, rules and format are followed, and required checks have passed.
+- [EXEC-RETRIEVE] Prefer retrieving missing context before asking.
+- [EXEC-ASK-ONE] Ask at most one clarifying question per turn.
+- [EXEC-OPTIONS] When presenting multiple options, use a numbered list.
+- [EXEC-NO-GUESS] Do not present guesses or unverified claims as facts.
+- [EXEC-STOP] Continue only while more work improves correctness, completeness, or grounding.
+- [EXEC-FINALIZE] Finalize only when the task is complete or explicitly blocked.
 
 ## Tooling & Git
 
-- Follow project-defined tooling first.
-- [Python] Use `uv` for execution and package management, `ruff` for formatting and linting, and `ty` for type checking.
-- [Git] `git add -A` MUST NOT be used; stage changes explicitly with `git add <path>`.
-- [Shell] Use `rg` to search file contents, code, logs, or text patterns.
-- [Shell] Use `fd` to find files or directories by name, path, or extension.
+- [TOOL-PROJECT] Follow project-defined tooling first.
+- [TOOL-PYTHON] For Python work, use `uv` for execution and package management, `ruff` for formatting and linting, and `ty` for type checking.
+- [TOOL-SEARCH] Use `rg` to search text and `fd` to find files or directories.
+- [GIT-STAGE] Do not use blanket staging such as `git add -A`; stage only intended paths.
 
 ## MEMORY.md
 
-- `MEMORY.md` is not auto-loaded; check it before non-trivial debugging or design decisions when prior project context may matter.
-- Entry categories: `GOTCHA` (recurring pitfalls) and `TASTE` (reusable preferences).
-- After non-trivial errors or discoveries, consider adding one concise, reusable, category-tagged entry.
-- Migrate `GOTCHA.md` and `TASTE.md` into `MEMORY.md`, then delete the legacy files.
+- [MEM-LOAD] `MEMORY.md` is not auto-loaded. Check it before non-trivial debugging or design work when prior project context may matter.
+- [MEM-STYLE] Keep entries short and reusable. Use `GOTCHA` for recurring pitfalls and `TASTE` for stable preferences.
+- [MEM-UPDATE] After a non-trivial error or discovery, consider adding one concise entry if it will help future work.
+
+## Rule Logging
+
+- In each user-facing response, include a concise “Triggered rules” section when any rules materially affected the turn.
+- Do not list rules that had no effect. Keep the section concise, ideally 1–4 items.
