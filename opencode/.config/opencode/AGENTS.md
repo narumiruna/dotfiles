@@ -1,65 +1,34 @@
-## Communication
+# Global AGENTS.md
 
-- User-facing responses MUST be in Taiwan Traditional Chinese unless the user explicitly requests otherwise.
-- Project documentation MUST follow the language convention already used by the project; if no convention is evident, use clear, standard English.
-- Ask at most one clarifying question at a time.
-- Do not ask a clarifying question when a reasonable assumption allows safe, reversible progress.
-- When presenting multiple options, enumerate them explicitly.
+## Core
 
-## Working Rules
+- User-facing assistant replies must be in Taiwan Traditional Chinese unless the user explicitly asks otherwise.
+- [CORE-SCOPE] Keep work bounded: one clear purpose per document, enforceable rules, and split files before they exceed about 1000 lines.
+- [CORE-BOUNDARY] Do not cross project boundaries, add dependencies without concrete justification, or introduce abstractions without a present need.
 
-- Use concise, precise, unambiguous language.
-- Keep designs, changes, and explanations as simple as possible.
-- Make scope and responsibility boundaries explicit.
-- Keep each new document focused on a single, well-defined purpose.
-- Write rules and recommendations in enforceable terms.
-- Do not repeat foundational rules across files unless the repetition serves a clear local purpose.
-- Do not assume external APIs, behaviors, or constraints when uncertain; verify them against authoritative sources.
-- Do not violate project-defined architectural boundaries.
-- Do not introduce new dependencies without explicit justification.
-- Do not introduce new abstractions unless they solve a concrete, current problem.
-- Do not add abstract interfaces for speculative future use.
-- Keep source files under 1000 lines when practical; split files over 500 lines by responsibility when reasonable.
+## Execution
 
-## Verification
+- [EXEC-RETRIEVE] Prefer retrieving missing context before asking.
+- [EXEC-ASK-ONE] Ask at most one clarifying question per turn, with explicit options.
+- [EXEC-OPTIONS] Use a numbered list for options.
+- [EXEC-NO-GUESS] Do not present guesses or unverified claims as facts.
+- [EXEC-STOP] Continue only while more work improves correctness, completeness, or grounding.
+- [EXEC-FINALIZE] Finalize only when the task is complete or explicitly blocked.
 
-- Before claiming completion, verify that the result satisfies the user's request, stays within scope, and is consistent with the available evidence.
-- If required verification cannot be completed, state that explicitly.
-- If a check fails, report the failure explicitly instead of claiming success.
+## Tooling & Git
 
-## Code Quality Checks
+- [TOOL-PROJECT] Follow project-defined tooling first.
+- [TOOL-PYTHON] For Python work, use `uv` for execution and package management, `ruff` for formatting and linting, and `ty` for type checking.
+- [TOOL-SEARCH] Use `rg` to search text and `fd` to find files or directories.
+- [GIT-STAGE] Do not use blanket staging such as `git add -A`; stage only intended paths.
 
-- If `.pre-commit-config.yaml` exists and the task changes code or configuration files, run `prek run -a` before completion.
-- If `prek` is unavailable, run `pre-commit run -a` instead.
-- Do not claim completion if required checks fail.
+## MEMORY.md
 
-## Python
+- [MEM-LOAD] `MEMORY.md` is not auto-loaded. Check it before non-trivial debugging or design work when prior project context may matter.
+- [MEM-STYLE] Keep entries short and reusable. Use `GOTCHA` for recurring pitfalls and `TASTE` for stable preferences.
+- [MEM-UPDATE] After a non-trivial error or discovery, consider adding one concise entry if it will help future work.
 
-- Follow the project's existing Python tooling when it is already defined.
-- If no project standard is evident, use `uv` for package management and script execution.
-- If no project standard is evident, use `ruff` for formatting and linting.
-- If no project standard is evident, use `ty` for type checking.
-- Do not add new Python dependencies without explicit justification.
+## Rule Logging
 
-## GOTCHA.md
-
-- Do not assume `GOTCHA.md` is auto-loaded.
-- Before debugging, root-cause analysis, or non-trivial code changes, look for `GOTCHA.md` (case-sensitive) in the project root.
-- If `GOTCHA.md` exists, read and apply relevant entries.
-- If the task reveals a non-obvious pitfall likely to recur, update `GOTCHA.md` in the same session.
-- If such an update is needed and `GOTCHA.md` does not exist, create it first.
-- Each entry MUST record exactly one non-obvious pitfall.
-
-## TASTE.md
-
-- Do not assume `TASTE.md` is auto-loaded.
-- Before making recommendation, implementation, or style decisions, look for `TASTE.md` (case-sensitive) in the project root.
-- If `TASTE.md` exists, read and apply relevant entries.
-- If the user provides a reusable preference likely to matter again, update `TASTE.md` in the same session.
-- If such an update is needed and `TASTE.md` does not exist, create it first.
-- Each entry MUST record exactly one reusable preference.
-
-## Git
-
-- Avoid `git add -A`.
-- Stage changes with precise file-level `git add <path>`.
+- In each user-facing response, include a concise “Triggered rules” section when any rules materially affected the turn.
+- Do not list rules that had no effect. Keep the section concise, ideally 1–4 items.
