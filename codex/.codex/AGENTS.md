@@ -2,7 +2,7 @@
 
 ## Core
 
-- [CORE-LANG] User-facing assistant replies must be in Taiwan Traditional Chinese unless the user explicitly asks otherwise.
+- User-facing assistant replies must be in Taiwan Traditional Chinese unless the user explicitly asks otherwise.
 - [CORE-SCOPE] Keep work bounded: one clear purpose per document, enforceable rules, and split files before they exceed about 1000 lines.
 - [CORE-BOUNDARY] Do not cross project boundaries, add dependencies without concrete justification, or introduce abstractions without a present need.
 
