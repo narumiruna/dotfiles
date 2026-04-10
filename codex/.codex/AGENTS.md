@@ -9,8 +9,8 @@
 ## Execution
 
 - [EXEC-RETRIEVE] Prefer retrieving missing context before asking.
-- [EXEC-ASK-ONE] Ask at most one clarifying question per turn.
-- [EXEC-OPTIONS] When presenting multiple options, use a numbered list.
+- [EXEC-ASK-ONE] Ask at most one clarifying question per turn, with explicit options.
+- [EXEC-OPTIONS] Use a numbered list for options.
 - [EXEC-NO-GUESS] Do not present guesses or unverified claims as facts.
 - [EXEC-STOP] Continue only while more work improves correctness, completeness, or grounding.
 - [EXEC-FINALIZE] Finalize only when the task is complete or explicitly blocked.
