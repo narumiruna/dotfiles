@@ -76,7 +76,6 @@ codex:
 # Install OpenCode config
 [group('config')]
 opencode:
-    cp codex/.codex/AGENTS.md opencode/.config/opencode/AGENTS.md
     stow {{ stow_flags }} -t {{ target }} opencode
 
 # Reset launchpad on macOS
