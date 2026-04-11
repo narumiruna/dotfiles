@@ -26,7 +26,7 @@
 
 - [MEM-LOAD] `MEMORY.md` is not auto-loaded. Check it before non-trivial debugging or design work when prior project context may matter.
 - [MEM-STYLE] Keep entries short and reusable. Use `GOTCHA` for recurring pitfalls and `TASTE` for stable preferences.
-- [MEM-UPDATE] After a non-trivial error or discovery, consider adding one concise entry if it will help future work.
+- [MEM-UPDATE] After a non-trivial error or discovery, adding one concise entry if it will help future work.
 
 ## Rule Logging
 
