@@ -46,7 +46,7 @@ atuin:
 # Install Fish shell config
 [group('config')]
 fish:
-    stow {{ stow_flags }} --ignore='\.config/fish/(config\.fish|fish_variables|completions/(docker|kubectl|orbctl)\.fish)$' -t {{ target }} fish
+    stow {{ stow_flags }} -t {{ target }} fish
 
 # Install Starship prompt
 [group('config')]
