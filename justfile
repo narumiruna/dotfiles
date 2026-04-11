@@ -1,6 +1,6 @@
 # Justfile for dotfiles management using GNU Stow
 
-stow_flags := "--restow -v"
+stow_flags := "--adopt --restow -v"
 target := env('HOME')
 dotfiles := "atuin zsh starship fish tmux codex opencode"
 
