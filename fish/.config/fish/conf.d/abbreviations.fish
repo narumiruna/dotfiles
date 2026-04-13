@@ -1,3 +1,5 @@
+status is-interactive; or return
+
 abbr -a ls 'lsd'
 abbr -a lsa 'lsd -lah'
 abbr -a l 'lsd -lah'
