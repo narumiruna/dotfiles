@@ -24,19 +24,19 @@ reinstall:
 
 # Install required dependencies
 install-deps:
-    cargo install --locked bat
-    cargo install --locked fd-find
-    cargo install --locked fnm
-    cargo install --locked lsd
-    cargo install --locked ouch
-    cargo install --locked ripgrep
-    cargo install --locked skim --no-default-features --features cli
-    cargo install --locked zoxide
-    cargo install --locked zellij
-    curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
-    curl -LsSf https://astral.sh/uv/install.sh | sh
-    curl -sS https://starship.rs/install.sh | sh
-    git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+    if command -v bat >/dev/null 2>&1; then echo "skip bat"; else cargo install --locked bat; fi
+    if command -v fd >/dev/null 2>&1; then echo "skip fd-find"; else cargo install --locked fd-find; fi
+    if command -v fnm >/dev/null 2>&1; then echo "skip fnm"; else cargo install --locked fnm; fi
+    if command -v lsd >/dev/null 2>&1; then echo "skip lsd"; else cargo install --locked lsd; fi
+    if command -v ouch >/dev/null 2>&1; then echo "skip ouch"; else cargo install --locked ouch; fi
+    if command -v rg >/dev/null 2>&1; then echo "skip ripgrep"; else cargo install --locked ripgrep; fi
+    if command -v sk >/dev/null 2>&1; then echo "skip skim"; else cargo install --locked skim --no-default-features --features cli; fi
+    if command -v zoxide >/dev/null 2>&1; then echo "skip zoxide"; else cargo install --locked zoxide; fi
+    if command -v zellij >/dev/null 2>&1; then echo "skip zellij"; else cargo install --locked zellij; fi
+    if command -v atuin >/dev/null 2>&1; then echo "skip atuin"; else curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh; fi
+    if command -v uv >/dev/null 2>&1; then echo "skip uv"; else curl -LsSf https://astral.sh/uv/install.sh | sh; fi
+    if command -v starship >/dev/null 2>&1; then echo "skip starship"; else curl -sS https://starship.rs/install.sh | sh; fi
+    if [ -d "$HOME/.pyenv" ]; then echo "skip pyenv"; else git clone https://github.com/pyenv/pyenv.git "$HOME/.pyenv"; fi
 
 # Install Atuin shell history config
 [group('config')]

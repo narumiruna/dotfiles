@@ -17,6 +17,8 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 cargo install --locked just
 ```
 
+`just install-deps` is safe to run repeatedly; already installed dependencies are skipped automatically.
+
 ## Usage
 
 ```shell
