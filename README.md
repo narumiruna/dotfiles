@@ -2,6 +2,18 @@
 
 ## Prerequisites
 
+### macOS (Recommended Bootstrap)
+
+On a fresh macOS machine, run bootstrap first:
+
+```shell
+./scripts/bootstrap-macos.sh
+```
+
+This script verifies/install `brew`, `stow`, Rust (`cargo`), and `just`, then runs `just install-deps`.
+
+### Manual Fallback
+
 ```shell
 # Linux (Debian/Ubuntu)
 sudo apt update
@@ -15,6 +27,9 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # justfile
 cargo install --locked just
+
+# Install project dependencies
+just install-deps
 ```
 
 ## Usage
