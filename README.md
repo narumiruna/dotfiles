@@ -32,6 +32,8 @@ cargo install --locked just
 just install-deps
 ```
 
+`just install-deps` is safe to run repeatedly; already installed dependencies are skipped automatically.
+
 ## Usage
 
 ```shell
