@@ -29,3 +29,13 @@ just
 # Uninstall all dotfiles
 just clean
 ```
+
+## macOS: Set fish as Default Shell
+
+If you want to set fish as your default shell on macOS via `chsh -s`,
+append `/opt/homebrew/bin/fish` to `/etc/shells` first:
+
+```shell
+echo "/opt/homebrew/bin/fish" | sudo tee -a /etc/shells
+chsh -s /opt/homebrew/bin/fish
+```
