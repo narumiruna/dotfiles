@@ -10,6 +10,9 @@ sudo apt install -y stow
 # macOS (using Homebrew)
 brew install stow
 
+# Install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 # justfile
 cargo install --locked just
 ```
