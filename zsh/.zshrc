@@ -34,4 +34,7 @@ path=(${(u)path})
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+
+# atuin
+path=("$HOME/.atuin/bin" $path)
 eval "$(atuin init zsh --disable-up-arrow)"
