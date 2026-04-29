@@ -2,7 +2,7 @@
 
 stow_flags := "--adopt --restow -v"
 target := env('HOME')
-dotfiles := "atuin zsh starship fish tmux codex opencode"
+dotfiles := "atuin zsh starship fish tmux codex opencode claude"
 
 # Install all dotfiles
 [default]
@@ -77,6 +77,11 @@ codex:
 [group('config')]
 opencode:
     stow {{ stow_flags }} -t {{ target }} opencode
+
+# Install Claude config
+[group('config')]
+claude:
+    stow {{ stow_flags }} -t {{ target }} claude
 
 # Reset launchpad on macOS
 [group('macos')]
