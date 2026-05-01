@@ -17,11 +17,8 @@
 
 ## Tooling & Git
 
-- [TOOL-PROJECT] Follow project-defined tooling first.
-- [TOOL-PYTHON] For Python work, use `uv` for execution and package management, `ruff` for formatting and linting, and `ty` for type checking.
 - [TOOL-SEARCH] Use `rg` to search text and `fd` to find files or directories.
 - [GIT-STAGE] Do not use blanket staging such as `git add -A`; stage only intended paths.
-- [GIT-COMMIT] The commit message should be structured as follows: `<type>[optional scope]: <description>\n\n[optional body]\n\n[optional footer(s)]`
 
 ## MEMORY.md
 
