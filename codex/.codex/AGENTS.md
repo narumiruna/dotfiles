@@ -17,7 +17,6 @@
 
 ## Tooling & Git
 
-- [TOOL-SEARCH] Use `rg` to search text and `fd` to find files or directories.
 - [GIT-STAGE] Do not use blanket staging such as `git add -A`; stage only intended paths.
 
 ## MEMORY.md
