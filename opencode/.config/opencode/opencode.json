@@ -27,6 +27,17 @@
       }
     }
   },
+  "permission": { "lsp": "allow" },
+  "lsp": {
+    "ruff": {
+      "command": ["ruff", "server"],
+      "extensions": [".py", ".pyi"]
+    },
+    "pyright": {
+      "command": ["pyright-langserver", "--stdio"],
+      "extensions": [".py", ".pyi"]
+    }
+  },
   "mcp": {
     "alphaxiv": {
       "type": "remote",
