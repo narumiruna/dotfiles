@@ -33,6 +33,10 @@
       "command": ["ruff", "server"],
       "extensions": [".py", ".pyi"]
     },
+    "ty": {
+      "command": ["ty", "server"],
+      "extensions": [".py", ".pyi"]
+    },
     "pyright": {
       "command": ["pyright-langserver", "--stdio"],
       "extensions": [".py", ".pyi"]
