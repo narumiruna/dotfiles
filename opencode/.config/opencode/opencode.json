@@ -28,7 +28,7 @@
       }
     }
   },
-  "permission": { "lsp": "allow" },
+  "permission": { "lsp": "ask" },
   "lsp": {
     "ruff": {
       "command": ["ruff", "server"],
@@ -36,10 +36,6 @@
     },
     "ty": {
       "command": ["ty", "server"],
-      "extensions": [".py", ".pyi"]
-    },
-    "pyright": {
-      "command": ["pyright-langserver", "--stdio"],
       "extensions": [".py", ".pyi"]
     }
   },
