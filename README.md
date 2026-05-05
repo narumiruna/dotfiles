@@ -10,7 +10,7 @@ On a fresh macOS machine, run bootstrap first:
 ./scripts/bootstrap-macos.sh
 ```
 
-This script verifies/install `brew`, `stow`, Rust (`cargo`), and `just`, then runs `just install-deps`.
+This script requires Homebrew to already be installed. It installs/verifies `stow`, Rust (`cargo`), and `just`, then runs `just install-deps`.
 
 ### Manual Fallback
 
@@ -40,12 +40,23 @@ just install-deps
 # List all available recipes
 just -l
 
-# Install all dotfiles
+# Install the default dotfile set
 just
 
-# Uninstall all dotfiles
+# Reinstall all default dotfiles
+just reinstall
+
+# Uninstall the default dotfile set
 just clean
+
+# Install one module
+just zsh
+just fish
+just pi
 ```
+
+The default install set is `atuin`, `zsh`, `starship`, `fish`, `tmux`, `codex`, `opencode`, and `claude`.
+On macOS, `ghostty` is installed in addition to the default set. The `pi` module is opt-in via `just pi`.
 
 ## macOS: Set fish as Default Shell
 
