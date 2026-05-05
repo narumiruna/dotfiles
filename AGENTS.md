@@ -17,7 +17,7 @@ Each stow module is linked into `$HOME` (for example, `zsh/.zshrc`, `fish/.confi
 - `just reinstall`: clean then install.
 - `just <module>`: install one module (examples: `just zsh`, `just fish`, `just pi`).
 - `just install-deps`: install CLI dependencies used by this setup.
-- `./scripts/bootstrap-macos.sh`: bootstrap a fresh macOS machine with Homebrew/Stow/Rust/Just, then run `just install-deps`.
+- `./scripts/bootstrap-macos.sh`: requires Homebrew to be installed first, then installs Stow/Rust/Just and runs `just install-deps`.
 - `prek run -a` (fallback `pre-commit run -a`): run all quality hooks; required before finishing config/code changes.
 
 ## Coding Style & Naming Conventions
