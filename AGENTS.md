@@ -3,19 +3,21 @@
 ## Project Structure & Module Organization
 This repository manages personal dotfiles using GNU Stow and `just`.
 
-- Root-level config folders: `atuin/`, `zsh/`, `fish/`, `starship/`, `tmux/`, `codex/`, `opencode/`, `ghostty/`.
-- Automation entrypoints: `justfile`, `.pre-commit-config.yaml`.
-- Project docs: `README.md`, `MEMORY.md` (if present for reusable gotchas/preferences).
+- Root-level stow modules: `atuin/`, `zsh/`, `fish/`, `starship/`, `tmux/`, `codex/`, `opencode/`, `claude/`, `ghostty/`, `pi/`.
+- Default install set in `justfile`: `atuin zsh starship fish tmux codex opencode claude`; `ghostty` is installed additionally on macOS, and `pi` is opt-in via `just pi`.
+- Automation entrypoints: `justfile`, `.pre-commit-config.yaml`, `scripts/bootstrap-macos.sh`.
+- Project docs: `README.md`; archived/legacy notes live under `legacy/`.
 
-Each config folder is stowed into `$HOME` (for example, `zsh/.zshrc` or `fish/.config/fish/...`).
+Each stow module is linked into `$HOME` (for example, `zsh/.zshrc`, `fish/.config/fish/...`, or `pi/.pi/...`).
 
 ## Build, Test, and Development Commands
 - `just -l`: list all available recipes.
-- `just` or `just install`: stow all default dotfiles into `$HOME`.
-- `just clean`: unstow managed dotfiles.
+- `just` or `just install`: stow the default module set into `$HOME`; on macOS this also installs `ghostty`.
+- `just clean`: unstow the default module set and `ghostty`.
 - `just reinstall`: clean then install.
-- `just <module>`: install one module (example: `just zsh`, `just fish`).
+- `just <module>`: install one module (examples: `just zsh`, `just fish`, `just pi`).
 - `just install-deps`: install CLI dependencies used by this setup.
+- `./scripts/bootstrap-macos.sh`: bootstrap a fresh macOS machine with Homebrew/Stow/Rust/Just, then run `just install-deps`.
 - `prek run -a` (fallback `pre-commit run -a`): run all quality hooks; required before finishing config/code changes.
 
 ## Coding Style & Naming Conventions
