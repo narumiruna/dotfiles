@@ -83,6 +83,11 @@ opencode:
 claude:
     stow {{ stow_flags }} -t {{ target }} claude
 
+# Install pi coding agent config
+[group('config')]
+pi:
+    stow {{ stow_flags }} -t {{ target }} pi
+
 # Reset launchpad on macOS
 [group('macos')]
 reset-launchpad:

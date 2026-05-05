@@ -1,0 +1,8 @@
+{
+  "lastChangelogVersion": "0.73.0",
+  "defaultProvider": "azure-openai-responses",
+  "defaultModel": "gpt-5.5",
+  "enabledModels": [
+    "azure-openai-responses/gpt-5.5"
+  ]
+}
