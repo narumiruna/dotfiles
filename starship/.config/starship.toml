@@ -94,3 +94,58 @@ use_12hr = true
 [hostname]
 ssh_only = false
 format   = "[ $ssh_symbol$hostname](bg:#a3aed2 fg:#090c0c)"
+
+[claude_model]
+symbol = "󰚩"
+style  = "fg:#d97757"
+format = "[$symbol Model $model]($style)"
+
+[claude_model.model_aliases]
+"Claude Opus 4.7"   = "Opus 4.7"
+"Claude Sonnet 4.6" = "Sonnet 4.6"
+"Claude Haiku 4.5"  = "Haiku 4.5"
+
+[claude_context]
+symbol               = "📄"
+format               = "[$symbol $percentage $gauge]($style)"
+gauge_width          = 10
+gauge_full_symbol    = "■"
+gauge_partial_symbol = "■"
+gauge_empty_symbol   = "□"
+
+[[claude_context.display]]
+threshold = 0
+style     = "fg:#a3aed2"
+
+[[claude_context.display]]
+threshold = 60
+style     = "fg:#e5c07b"
+
+[[claude_context.display]]
+threshold = 80
+style     = "fg:#d97757"
+
+[claude_cost]
+symbol = "💵"
+format = "[$symbol \\$$cost]($style)"
+
+[[claude_cost.display]]
+threshold = 0
+style     = "fg:#769ff0"
+
+[[claude_cost.display]]
+threshold = 5
+style     = "fg:#e5c07b"
+
+[[claude_cost.display]]
+threshold = 20
+style     = "fg:#d97757"
+
+[profiles]
+claude-code = """
+$claude_model\
+[  ](fg:#666666)\
+$claude_context\
+[  ](fg:#666666)\
+$claude_cost\
+"""
