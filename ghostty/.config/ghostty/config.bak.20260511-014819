@@ -1,0 +1,37 @@
+font-family = MesloLGS Nerd Font Mono
+font-size = 20
+theme = Molokai
+
+# Window / layout
+window-save-state = always
+window-padding-x = 8
+window-padding-y = 6
+window-padding-balance = true
+window-inherit-working-directory = true
+tab-inherit-working-directory = true
+split-inherit-working-directory = true
+
+# Cursor / mouse
+cursor-style = block
+cursor-style-blink = false
+mouse-hide-while-typing = true
+
+# Scrollback
+scrollback-limit = 104857600
+
+# Clipboard
+copy-on-select = true
+clipboard-paste-protection = true
+clipboard-trim-trailing-spaces = true
+
+# Shell integration
+shell-integration = fish
+shell-integration-features = cursor,sudo,title,ssh-env,ssh-terminfo,path
+notify-on-command-finish = unfocused
+
+# macOS
+macos-option-as-alt = true
+macos-titlebar-style = transparent
+macos-window-buttons = visible
+macos-auto-secure-input = true
+macos-secure-input-indication = true
