@@ -1,7 +1,0 @@
-font-family = MesloLGS Nerd Font Mono
-font-size = 20
-theme = Molokai
-window-save-state = always
-copy-on-select = true
-shell-integration = fish
-macos-option-as-alt = true
