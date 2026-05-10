@@ -1,0 +1,40 @@
+#:schema https://developers.openai.com/codex/config-schema.json
+# https://developers.openai.com/codex/config-reference
+
+model                  = "gpt-5.5"
+personality            = "pragmatic"
+model_reasoning_effort = "medium"
+commit_attribution     = ""
+
+[features]
+apps                   = false
+goals                  = true
+memories               = true
+multi_agent            = true
+prevent_idle_sleep     = true
+terminal_resize_reflow = true
+
+[tui]
+status_line = [
+  "context-remaining",
+  "current-dir",
+  "five-hour-limit",
+  "model-with-reasoning",
+  "weekly-limit",
+]
+
+[mcp_servers.chrome-devtools]
+command = "npx"
+args    = ["-y", "chrome-devtools-mcp@latest"]
+enabled = false
+
+[mcp_servers.playwright]
+command = "npx"
+args    = ["@playwright/mcp@latest"]
+enabled = false
+
+[mcp_servers.firecrawl]
+command  = "npx"
+args     = ["-y", "firecrawl-mcp"]
+env_vars = ["FIRECRAWL_API_KEY"]
+enabled  = false
