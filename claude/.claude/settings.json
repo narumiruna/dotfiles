@@ -1,7 +1,11 @@
 {
   "model": "opus[1m]",
-  "theme": "auto",
+  "statusLine": {
+    "type": "command",
+    "command": "starship statusline claude-code"
+  },
   "effortLevel": "xhigh",
+  "theme": "auto",
   "attribution": {
     "commit": "",
     "pr": ""
