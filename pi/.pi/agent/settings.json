@@ -1,11 +1,22 @@
 {
   "lastChangelogVersion": "0.74.0",
-  "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.5",
+  "defaultProvider": "anthropic",
+  "defaultModel": "claude-opus-4-7",
+  "packages": [
+    "npm:@narumitw/pi-retry",
+    "npm:@narumitw/pi-skillforge"
+  ],
+  "theme": "dark",
+  "defaultThinkingLevel": "medium",
   "enabledModels": [
-    "azure-openai-responses/gpt-5.4",
     "azure-openai-responses/gpt-5.5",
+    "openai-codex/gpt-5.5",
+    "azure-openai-responses/gpt-5.4",
     "openai-codex/gpt-5.4",
-    "openai-codex/gpt-5.5"
+    "github-copilot/gpt-5.5",
+    "github-copilot/gpt-5.4",
+    "anthropic/claude-opus-4-7",
+    "anthropic/claude-opus-4-6",
+    "anthropic/claude-sonnet-4-6"
   ]
 }

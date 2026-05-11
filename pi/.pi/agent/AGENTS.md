@@ -1,0 +1,1 @@
+- Do not add, preserve, or generate any AI attribution trailers in commits, PRs, or messages, including `Co-authored-by`, `Generated-by`, `Created-by`, `Coding-Agent`, model names, tool names, or agent attribution footers.
