@@ -2,7 +2,7 @@
 
 stow_flags := "--adopt --restow -v"
 target := env('HOME')
-dotfiles := "atuin zsh starship fish tmux codex opencode claude"
+dotfiles := "atuin zsh starship fish tmux codex opencode claude pi"
 
 # Install all dotfiles
 [default]
