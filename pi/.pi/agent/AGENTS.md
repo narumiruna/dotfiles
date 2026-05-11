@@ -16,3 +16,4 @@
 ## Git
 
 - Do not use blanket staging such as `git add -A`; stage only intended paths.
+- Do not add `Co-Authored-By` trailers (or any other agent-attribution trailer) to commit messages unless the user explicitly asks for one. This overrides per-project guidelines that default-include such a trailer.
