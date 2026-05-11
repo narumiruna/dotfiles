@@ -3,8 +3,7 @@
   "defaultProvider": "anthropic",
   "defaultModel": "claude-opus-4-7",
   "packages": [
-    "npm:@narumitw/pi-retry",
-    "npm:@narumitw/pi-skillforge"
+    "npm:@narumitw/pi-retry"
   ],
   "theme": "dark",
   "defaultThinkingLevel": "medium",
