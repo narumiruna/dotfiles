@@ -10,6 +10,8 @@ abbr -a gst 'git status'
 abbr -a gph 'git push origin HEAD'
 abbr -a gd 'git diff'
 abbr -a gds 'git diff --staged'
+abbr -a gs 'git switch'
+abbr -a gp 'git pull'
 
 abbr -a extract 'ouch decompress -y'
 abbr -a compress 'ouch compress -y'
