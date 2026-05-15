@@ -3,14 +3,14 @@
   "defaultProvider": "openai-codex",
   "defaultModel": "gpt-5.5",
   "packages": [
-    "npm:@narumitw/pi-retry"
+    "npm:@narumitw/pi-retry",
+    "npm:@narumitw/pi-goal",
+    "npm:@narumitw/pi-chrome-devtools"
   ],
   "theme": "dark",
-  "defaultThinkingLevel": "medium",
+  "defaultThinkingLevel": "xhigh",
   "enabledModels": [
-    "azure-openai-responses/gpt-5.5",
     "openai-codex/gpt-5.5",
-    "azure-openai-responses/gpt-5.4",
     "openai-codex/gpt-5.4",
     "github-copilot/gpt-5.4"
   ]
