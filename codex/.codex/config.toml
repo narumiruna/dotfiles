@@ -3,7 +3,7 @@
 
 model                  = "gpt-5.5"
 personality            = "pragmatic"
-model_reasoning_effort = "medium"
+model_reasoning_effort = "xhigh"
 commit_attribution     = ""
 
 [features]
