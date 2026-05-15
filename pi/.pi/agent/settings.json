@@ -5,7 +5,9 @@
   "packages": [
     "npm:@narumitw/pi-retry",
     "npm:@narumitw/pi-goal",
-    "npm:@narumitw/pi-chrome-devtools"
+    "npm:@narumitw/pi-chrome-devtools",
+    "npm:@narumitw/pi-caffeinate",
+    "npm:@narumitw/pi-firecrawl"
   ],
   "theme": "dark",
   "defaultThinkingLevel": "xhigh",
