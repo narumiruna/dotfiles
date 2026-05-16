@@ -8,6 +8,7 @@
 
 ## Execution
 
+- Never run commands that open an interactive editor, pager, REPL, TUI, or prompt.
 - Prefer retrieving missing context before asking.
 - Ask at most one clarifying question per turn, and present options as a numbered list.
 - Label assumptions and unknowns; verify critical external facts.
