@@ -1,19 +1,22 @@
 {
-  "lastChangelogVersion": "0.74.0",
-  "defaultProvider": "openai-codex",
-  "defaultModel": "gpt-5.5",
-  "packages": [
-    "npm:@narumitw/pi-retry",
-    "npm:@narumitw/pi-goal",
-    "npm:@narumitw/pi-chrome-devtools",
-    "npm:@narumitw/pi-caffeinate",
-    "npm:@narumitw/pi-firecrawl"
-  ],
-  "theme": "dark",
-  "defaultThinkingLevel": "xhigh",
-  "enabledModels": [
-    "openai-codex/gpt-5.5",
-    "openai-codex/gpt-5.4",
-    "github-copilot/gpt-5.4"
-  ]
+	"lastChangelogVersion": "0.74.0",
+	"defaultProvider": "openai-codex",
+	"defaultModel": "gpt-5.5",
+	"packages": [
+		"npm:@narumitw/pi-btw",
+		"npm:@narumitw/pi-caffeinate",
+		"npm:@narumitw/pi-chrome-devtools",
+		"npm:@narumitw/pi-firecrawl",
+		"npm:@narumitw/pi-goal",
+		"npm:@narumitw/pi-python-lsp",
+		"npm:@narumitw/pi-retry",
+		"npm:@narumitw/pi-statusline"
+	],
+	"theme": "dark",
+	"defaultThinkingLevel": "medium",
+	"enabledModels": [
+		"openai-codex/gpt-5.5",
+		"openai-codex/gpt-5.4",
+		"github-copilot/gpt-5.4"
+	]
 }
