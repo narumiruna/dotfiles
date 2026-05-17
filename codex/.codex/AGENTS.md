@@ -17,10 +17,4 @@
 ## Git
 
 - Do not use blanket staging such as `git add -A`; stage only intended paths.
-
-## MEMORY.md
-
-- `MEMORY.md` is not auto-loaded. Check it before non-trivial debugging or design work when prior project context may matter.
-- Keep entries short and reusable.
-- `MEMORY.md` must use `## GOTCHA` and `## TASTE` sections.
-- After a non-trivial error or discovery, add one concise entry if it will help future work.
+- Do not add `Co-Authored-By` trailers (or any other agent-attribution trailer) to commit messages unless the user explicitly asks for one. This overrides per-project guidelines that default-include such a trailer.
