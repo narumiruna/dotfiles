@@ -3,6 +3,7 @@ font-family = MesloLGS Nerd Font Mono
 font-size = 20
 macos-option-as-alt = true
 shell-integration = fish
+shell-integration-features = ssh-env,ssh-terminfo
 theme = Molokai
 window-save-state = always
 window-show-tab-bar = always
