@@ -63,7 +63,7 @@ install-deps:
     if command -v zellij >/dev/null 2>&1; then echo "skip zellij"; else cargo install --locked zellij; fi
     if command -v atuin >/dev/null 2>&1; then echo "skip atuin"; else curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh; fi
     if command -v uv >/dev/null 2>&1; then echo "skip uv"; else curl -LsSf https://astral.sh/uv/install.sh | sh; fi
-    if command -v starship >/dev/null 2>&1; then echo "skip starship"; else curl -sS https://starship.rs/install.sh | sh; fi
+    if command -v starship >/dev/null 2>&1; then echo "skip starship"; else curl -sS https://starship.rs/install.sh | sh -s -- --yes; fi
     if [ -d "$HOME/.pyenv" ]; then echo "skip pyenv"; else git clone https://github.com/pyenv/pyenv.git "$HOME/.pyenv"; fi
 
 # Install Atuin shell history config
