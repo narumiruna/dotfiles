@@ -2,6 +2,7 @@
 
 stow_flags := "--adopt --restow -v"
 target := env('HOME')
+export PATH := target + "/.cargo/bin:" + env('PATH')
 dotfiles := "atuin zsh starship fish tmux"
 # Agent configs are installed by copy/merge so local edits are not symlinked.
 # Keep this list for unstowing older installations that used GNU Stow.
@@ -50,6 +51,7 @@ _clean-agent-configs:
 
 # Install required dependencies
 install-deps:
+    if command -v cargo >/dev/null 2>&1; then echo "skip rust"; else curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --profile minimal; fi
     if command -v bat >/dev/null 2>&1; then echo "skip bat"; else cargo install --locked bat; fi
     if command -v fd >/dev/null 2>&1; then echo "skip fd-find"; else cargo install --locked fd-find; fi
     if command -v fnm >/dev/null 2>&1; then echo "skip fnm"; else cargo install --locked fnm; fi
