@@ -1,0 +1,25 @@
+{
+	"lastChangelogVersion": "0.75.3",
+	"defaultProvider": "openai-codex",
+	"defaultModel": "gpt-5.5",
+	"packages": [
+		"npm:@narumitw/pi-btw",
+		"npm:@narumitw/pi-caffeinate",
+		"npm:@narumitw/pi-chrome-devtools",
+		"npm:@narumitw/pi-firecrawl",
+		"npm:@narumitw/pi-retry",
+		"npm:@narumitw/pi-statusline",
+		"npm:@narumitw/pi-codex-usage",
+		"npm:@narumitw/pi-goal",
+		"npm:@narumitw/pi-lsp",
+		"npm:@narumitw/pi-plan-mode",
+		"npm:@narumitw/pi-subagents"
+	],
+	"theme": "dark",
+	"defaultThinkingLevel": "medium",
+	"enabledModels": [
+		"openai-codex/gpt-5.5",
+		"openai-codex/gpt-5.4",
+		"github-copilot/gpt-5.4"
+	]
+}
