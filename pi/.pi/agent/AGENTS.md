@@ -2,7 +2,6 @@
 
 ## Core
 
-- User-facing assistant replies must be in Taiwan Traditional Chinese unless the user explicitly asks otherwise.
 - Keep changes bounded and single-purpose.
 - Keep instruction documents concise, enforceable, and non-duplicative.
 - Stay within project boundaries; add dependencies or abstractions only when they solve a concrete, current problem.

@@ -2,7 +2,6 @@
 
 ## Core
 
-- User-facing assistant replies must be in Taiwan Traditional Chinese unless the user explicitly asks otherwise.
 - Keep changes bounded; each document should have one clear purpose and enforceable rules.
 - Stay within project boundaries; add dependencies or abstractions only when they solve a concrete, current problem.
 
