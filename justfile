@@ -6,7 +6,7 @@ export PATH := target + "/.cargo/bin:" + env('PATH')
 dotfiles := "atuin zsh starship fish tmux"
 # Agent configs are installed by copy/merge so local edits are not symlinked.
 # Keep this list for unstowing older installations that used GNU Stow.
-removed_dotfiles := "codex claude opencode pi"
+removed_dotfiles := "codex claude pi"
 
 # Install all dotfiles
 [default]
@@ -34,20 +34,18 @@ reinstall:
 # local-only keys stay in place while repo defaults win on matching keys.
 _install-agent-configs:
     stow -D -t {{ target }} {{ removed_dotfiles }} 2>/dev/null || true
-    mkdir -p "{{ target }}/.codex" "{{ target }}/.claude" "{{ target }}/.config/opencode" "{{ target }}/.pi/agent"
-    rm -f "{{ target }}/.codex/AGENTS.md" "{{ target }}/.config/opencode/AGENTS.md" "{{ target }}/.pi/agent/AGENTS.md"
+    mkdir -p "{{ target }}/.codex" "{{ target }}/.claude" "{{ target }}/.pi/agent"
+    rm -f "{{ target }}/.codex/AGENTS.md" "{{ target }}/.pi/agent/AGENTS.md"
     cp -f codex/.codex/AGENTS.md "{{ target }}/.codex/AGENTS.md"
     python3 scripts/merge_toml.py codex/.codex/config.toml "{{ target }}/.codex/config.toml"
     python3 scripts/merge_json.py claude/.claude/settings.json "{{ target }}/.claude/settings.json"
-    cp -f opencode/.config/opencode/AGENTS.md "{{ target }}/.config/opencode/AGENTS.md"
-    python3 scripts/merge_json.py opencode/.config/opencode/opencode.json "{{ target }}/.config/opencode/opencode.json"
     cp -f pi/.pi/agent/AGENTS.md "{{ target }}/.pi/agent/AGENTS.md"
     python3 scripts/merge_json.py pi/.pi/agent/settings.json "{{ target }}/.pi/agent/settings.json"
 
 # Remove copied instruction files only.
 # Merged JSON/TOML configs are intentionally preserved to avoid deleting local edits.
 _clean-agent-configs:
-    rm -f "{{ target }}/.codex/AGENTS.md" "{{ target }}/.config/opencode/AGENTS.md" "{{ target }}/.pi/agent/AGENTS.md"
+    rm -f "{{ target }}/.codex/AGENTS.md" "{{ target }}/.pi/agent/AGENTS.md"
 
 # Install required dependencies
 install-deps:

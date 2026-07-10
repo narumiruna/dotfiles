@@ -38,5 +38,4 @@ backup_agents_md() {
 }
 
 backup_agents_md "codex" "codex/.codex/AGENTS.md"
-backup_agents_md "opencode" "opencode/.config/opencode/AGENTS.md"
 backup_agents_md "pi" "pi/.pi/agent/AGENTS.md"
