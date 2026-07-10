@@ -5,7 +5,7 @@
 - Keep changes bounded and single-purpose.
 - Keep instruction documents concise, enforceable, and non-duplicative.
 - Stay within project boundaries; add dependencies or abstractions only when they solve a concrete, current problem.
-- Source files should generally remain under 1,000 lines. Files exceeding this threshold must be reviewed and split into smaller, logically organized modules unless there is a documented reason to keep them together, such as generated code or declarative data.
+- Source files exceeding 1,000 lines must either be decomposed along clear responsibility boundaries or include a documented justification for remaining intact.
 
 ## Execution
 
