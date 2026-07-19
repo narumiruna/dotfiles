@@ -10,6 +10,7 @@
 ## Execution
 
 - Never run commands that open an interactive editor, pager, REPL, TUI, or prompt.
+- Always use `uv run python` instead of invoking `python` directly.
 - Retrieve relevant local context before asking the user for clarification.
 - Ask at most one clarifying question per turn, and present options as a numbered list.
 - Label assumptions and unknowns; verify critical external facts.
