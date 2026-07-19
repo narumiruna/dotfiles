@@ -16,7 +16,8 @@
 - Label assumptions and unknowns; verify critical external facts.
 - Finalize when the task is complete or explicitly blocked; avoid extra work that does not improve correctness, completeness, or grounding.
 
-## Git
+## Git & GitHub
 
+- Do not create or modify issues, pull requests, comments, reviews, discussions, or other public artifacts in third-party repositories without the user's explicit approval for that exact action and content; approval to execute a plan does not count.
 - Do not use blanket staging such as `git add -A`; stage only intended paths.
 - Do not add `Co-Authored-By` trailers (or any other agent-attribution trailer) to commit messages unless the user explicitly asks for one. This overrides per-project guidelines that default-include such a trailer.
