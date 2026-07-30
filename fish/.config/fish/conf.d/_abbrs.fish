@@ -12,6 +12,7 @@ abbr -a gd 'git diff'
 abbr -a gds 'git diff --staged'
 abbr -a gs 'git switch'
 abbr -a gp 'git pull'
+abbr -a gsgp 'git switch main && git pull origin main'
 
 abbr -a extract 'ouch decompress -y'
 abbr -a compress 'ouch compress -y'
