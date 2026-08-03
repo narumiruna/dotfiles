@@ -1,2 +1,2 @@
-test -d /home/narumi/.pixi/bin; or return
-set -gx PATH "/home/narumi/.pixi/bin" $PATH
+test -d $HOME/.pixi/bin; or return
+fish_add_path -m $HOME/.pixi/bin
