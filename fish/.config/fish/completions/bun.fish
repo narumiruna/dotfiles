@@ -1,5 +1,4 @@
 type -q bun; or return
-
 # This is terribly complicated
 # It's because:
 # 1. bun run has to have dynamic completions
