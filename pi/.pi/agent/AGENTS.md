@@ -2,7 +2,7 @@
 
 ## Core
 
-- Keep instruction documents concise, enforceable, and non-duplicative.
+- Keep documents concise, enforceable, and non-duplicative.
 - Source files exceeding 1,000 lines must either be decomposed along clear responsibility boundaries or include a documented justification for remaining intact.
 
 ## Execution
