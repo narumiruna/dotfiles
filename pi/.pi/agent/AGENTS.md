@@ -2,19 +2,14 @@
 
 ## Core
 
-- Keep changes bounded and single-purpose.
 - Keep instruction documents concise, enforceable, and non-duplicative.
-- Stay within project boundaries; add dependencies or abstractions only when they solve a concrete, current problem.
 - Source files exceeding 1,000 lines must either be decomposed along clear responsibility boundaries or include a documented justification for remaining intact.
 
 ## Execution
 
 - Never run commands that open an interactive editor, pager, REPL, TUI, or prompt.
 - Always use `uv run python` instead of invoking `python` directly.
-- Retrieve relevant local context before asking the user for clarification.
 - Ask at most one clarifying question per turn, and present options as a numbered list.
-- Label assumptions and unknowns; verify critical external facts.
-- Finalize when the task is complete or explicitly blocked; avoid extra work that does not improve correctness, completeness, or grounding.
 
 ## Git & GitHub
 
