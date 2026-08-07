@@ -14,4 +14,6 @@
 ## Git & GitHub
 
 - Do not use blanket staging such as `git add -A`; stage only intended paths.
+- Never change Git `user.name` or `user.email` unless explicitly requested. Use `git -c` for temporary identities.
+- Always create signed commits.
 - Do not add `Co-Authored-By` trailers (or any other agent-attribution trailer) to commit messages unless the user explicitly asks for one. This overrides per-project guidelines that default-include such a trailer.
