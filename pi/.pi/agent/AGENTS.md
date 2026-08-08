@@ -1,9 +1,15 @@
 # Global AGENTS.md
 
-## Core
+## Communication & Documentation
 
-- Keep documents concise, enforceable, and non-duplicative.
-- Source files exceeding 1,000 lines must either be decomposed along clear responsibility boundaries or include a documented justification for remaining intact.
+- Keep communication and documentation concise, clear, accurate, and non-redundant.
+- When asked to explain something, start at a level a 12-year-old can understand, then add depth as needed.
+- Make rules specific and verifiable.
+- Write one sentence per line in prose.
+
+## Code Style
+
+- Split source files over 1,000 lines along clear responsibility boundaries, or document why they must remain intact.
 
 ## Execution
 
