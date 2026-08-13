@@ -9,6 +9,8 @@
 
 ## Code Style
 
+- Follow KISS (Keep It Simple) and YAGNI (You Aren't Gonna Need It).
+- Prefer simple, minimal solutions over unnecessary complexity.
 - Split source files over 1,000 lines along clear responsibility boundaries, or document why they must remain intact.
 
 ## Execution
