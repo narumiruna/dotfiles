@@ -165,4 +165,4 @@ venv.bak/
 .claude/settings.local.json
 
 # Fish shell
-fish/.config/fish/fish_variables
+fish/.config/fish/fish_*
