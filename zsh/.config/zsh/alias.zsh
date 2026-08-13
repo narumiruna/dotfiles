@@ -8,6 +8,7 @@ alias gst="git status"
 alias gph="git push origin HEAD"
 alias gd="git diff"
 alias gds="git diff --staged"
+alias gsgp="git switch main && git pull origin main"
 
 alias extract="ouch decompress -y"
 
