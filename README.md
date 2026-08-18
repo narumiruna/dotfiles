@@ -10,7 +10,7 @@ Personal **dotfiles** managed with **GNU Stow** and **just** for a fast, reprodu
 - 🐧 **Linux-friendly setup** with manual dependency instructions.
 - 🐟 **Fish and Zsh shell configs** with shared CLI tooling.
 - ⭐ **Starship prompt**, **Tmux**, **Atuin shell history**, and **Ghostty terminal** configs.
-- 🤖 **AI agent configuration** copied or merged safely to preserve local-only settings.
+- 🤖 **AI agent configuration** copied as regular files without symlinks.
 
 ## 📦 Included Modules
 
@@ -22,9 +22,9 @@ Personal **dotfiles** managed with **GNU Stow** and **just** for a fast, reprodu
 | `starship` | Cross-shell prompt config | GNU Stow |
 | `tmux` | Terminal multiplexer config | GNU Stow |
 | `ghostty` | Ghostty terminal config | GNU Stow; installed by default on macOS |
-| `codex` | Codex CLI instructions and config | Copy/merge via `just install` |
-| `claude` | Claude settings | Merge via `just install` |
-| `pi` | Pi coding agent instructions and settings | Copy/merge via `just install` |
+| `codex` | Codex CLI instructions and config | Copy and overwrite via `just install` |
+| `claude` | Claude settings | Copy and overwrite via `just install` |
+| `pi` | Pi coding agent instructions and settings | Copy and overwrite via `just install` |
 
 ## ✅ Prerequisites
 
@@ -44,7 +44,7 @@ cd ~/dotfiles
 just
 ```
 
-The default install links `atuin`, `zsh`, `starship`, `fish`, and `tmux`; it also copies or merges agent configs for Codex, Claude, and Pi. On macOS, `ghostty` is installed automatically too.
+The default install links `atuin`, `zsh`, `starship`, `fish`, and `tmux`; it also copies and overwrites agent configs for Codex, Claude, and Pi. On macOS, `ghostty` is installed automatically too.
 
 ## 🍎 macOS Bootstrap
 
@@ -104,7 +104,7 @@ just ghostty
 
 ## 🤖 AI Agent Config Notes
 
-Agent configuration is intentionally **not symlinked**. During `just install`, instruction files are copied and JSON/TOML settings are merged so local-only keys remain in `$HOME` while repository defaults win on matching keys.
+Agent configuration is intentionally **not symlinked**. During `just install`, instruction and settings files are copied from the repository and overwrite the corresponding files in `$HOME`.
 
 This applies to:
 

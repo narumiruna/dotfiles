@@ -4,9 +4,7 @@ stow_flags := "--adopt --restow -v"
 target := env('HOME')
 export PATH := target + "/.cargo/bin:" + env('PATH')
 dotfiles := "atuin zsh starship fish tmux"
-# Agent configs are installed by copy/merge so local edits are not symlinked.
-# Keep this list for unstowing older installations that used GNU Stow.
-removed_dotfiles := "codex claude pi"
+# Agent configs are copied so local edits are not symlinked.
 
 # Install all dotfiles
 [default]
@@ -20,7 +18,6 @@ install:
 # Uninstall all dotfiles
 clean:
     stow -D -t {{ target }} {{ dotfiles }} 2>/dev/null || true
-    stow -D -t {{ target }} {{ removed_dotfiles }} 2>/dev/null || true
     just _clean-agent-configs
     stow -D -t {{ target }} ghostty 2>/dev/null || true
 
@@ -29,21 +26,18 @@ reinstall:
     just clean
     just install
 
-# Install AI agent configs without symlinks.
-# Instruction files are copied from the repo; JSON/TOML configs are merged so
-# local-only keys stay in place while repo defaults win on matching keys.
+# Install AI agent configs as regular files without symlinks or merging.
 _install-agent-configs:
-    stow -D -t {{ target }} {{ removed_dotfiles }} 2>/dev/null || true
     mkdir -p "{{ target }}/.codex" "{{ target }}/.claude" "{{ target }}/.pi/agent"
-    rm -f "{{ target }}/.codex/AGENTS.md" "{{ target }}/.pi/agent/AGENTS.md"
+    rm -f "{{ target }}/.codex/AGENTS.md" "{{ target }}/.codex/config.toml" "{{ target }}/.claude/settings.json" "{{ target }}/.pi/agent/AGENTS.md" "{{ target }}/.pi/agent/settings.json"
     cp -f codex/.codex/AGENTS.md "{{ target }}/.codex/AGENTS.md"
-    python3 scripts/merge_toml.py codex/.codex/config.toml "{{ target }}/.codex/config.toml"
-    python3 scripts/merge_json.py claude/.claude/settings.json "{{ target }}/.claude/settings.json"
+    cp -f codex/.codex/config.toml "{{ target }}/.codex/config.toml"
+    cp -f claude/.claude/settings.json "{{ target }}/.claude/settings.json"
     cp -f pi/.pi/agent/AGENTS.md "{{ target }}/.pi/agent/AGENTS.md"
-    python3 scripts/merge_json.py pi/.pi/agent/settings.json "{{ target }}/.pi/agent/settings.json"
+    cp -f pi/.pi/agent/settings.json "{{ target }}/.pi/agent/settings.json"
 
 # Remove copied instruction files only.
-# Merged JSON/TOML configs are intentionally preserved to avoid deleting local edits.
+# Copied JSON/TOML configs are preserved to avoid deleting later local edits.
 _clean-agent-configs:
     rm -f "{{ target }}/.codex/AGENTS.md" "{{ target }}/.pi/agent/AGENTS.md"
 

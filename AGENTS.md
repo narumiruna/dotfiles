@@ -8,7 +8,7 @@ This repository manages personal dotfiles using GNU Stow and `just`.
 - Automation entrypoints: `justfile`, `.pre-commit-config.yaml`, `scripts/bootstrap-macos.sh`.
 - Project docs: `README.md`; archived/legacy notes live under `legacy/`.
 
-Each shell or terminal module is linked into `$HOME` (for example, `zsh/.zshrc` or `fish/.config/fish/...`); agent configs are copied or merged.
+Each shell or terminal module is linked into `$HOME` (for example, `zsh/.zshrc` or `fish/.config/fish/...`); agent configs are copied and overwrite their target files.
 
 ## Build, Test, and Development Commands
 - `just -l`: list all available recipes.
