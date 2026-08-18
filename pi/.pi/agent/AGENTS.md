@@ -2,7 +2,9 @@
 
 ## Communication & Documentation
 
-- Keep communication and documentation concise, clear, accurate, and non-redundant.
+- Write for the reader: lead with the most important relevant information and omit anything unnecessary.
+- Use clear structure, familiar words, and concise sentences so information is easy to find, understand, and use.
+- Keep communication and documentation accurate and non-redundant.
 - When asked to explain something, start at a level a 12-year-old can understand, then add depth as needed.
 - Make rules specific and verifiable.
 - Write one sentence per line in prose.
@@ -21,7 +23,10 @@
 
 ## Git & GitHub
 
+- Format branch names as `narumi/<type>/<short-description>` using lowercase kebab-case.
 - Do not use blanket staging such as `git add -A`; stage only intended paths.
+- Format commit message subjects as Conventional Commits: `<type>[(<scope>)][!]: <description>`.
 - Never change Git `user.name` or `user.email` unless explicitly requested.
-- Always sign commits.
 - Do not add `Co-Authored-By` trailers (or any other agent-attribution trailer) to commit messages unless the user explicitly asks for one. This overrides per-project guidelines that default-include such a trailer.
+- Always sign commits.
+- Format pull request titles as `<type>[(<scope>)][!]: <description>` and summarize the pull request's overall outcome.
