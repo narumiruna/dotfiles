@@ -3,8 +3,8 @@
 ## Project Structure & Module Organization
 This repository manages personal dotfiles using GNU Stow and `just`.
 
-- Root-level modules: `atuin/`, `zsh/`, `fish/`, `starship/`, `tmux/`, `codex/`, `claude/`, `ghostty/`, `pi/`.
-- The default installer stows `atuin zsh starship fish tmux`, copies or merges the `codex`, `claude`, and `pi` configs, and additionally installs `ghostty` on macOS.
+- Root-level modules: `atuin/`, `zsh/`, `fish/`, `starship/`, `tmux/`, `codex/`, `ghostty/`, `pi/`.
+- The default installer stows `atuin zsh starship fish tmux`, copies and overwrites the `codex` and `pi` configs, and additionally installs `ghostty` on macOS.
 - Automation entrypoints: `justfile`, `.pre-commit-config.yaml`, `scripts/bootstrap-macos.sh`.
 - Project docs: `README.md`; archived/legacy notes live under `legacy/`.
 

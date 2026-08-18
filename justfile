@@ -28,11 +28,10 @@ reinstall:
 
 # Install AI agent configs as regular files without symlinks or merging.
 _install-agent-configs:
-    mkdir -p "{{ target }}/.codex" "{{ target }}/.claude" "{{ target }}/.pi/agent"
-    rm -f "{{ target }}/.codex/AGENTS.md" "{{ target }}/.codex/config.toml" "{{ target }}/.claude/settings.json" "{{ target }}/.pi/agent/AGENTS.md" "{{ target }}/.pi/agent/settings.json"
+    mkdir -p "{{ target }}/.codex" "{{ target }}/.pi/agent"
+    rm -f "{{ target }}/.codex/AGENTS.md" "{{ target }}/.codex/config.toml" "{{ target }}/.pi/agent/AGENTS.md" "{{ target }}/.pi/agent/settings.json"
     cp -f codex/.codex/AGENTS.md "{{ target }}/.codex/AGENTS.md"
     cp -f codex/.codex/config.toml "{{ target }}/.codex/config.toml"
-    cp -f claude/.claude/settings.json "{{ target }}/.claude/settings.json"
     cp -f pi/.pi/agent/AGENTS.md "{{ target }}/.pi/agent/AGENTS.md"
     cp -f pi/.pi/agent/settings.json "{{ target }}/.pi/agent/settings.json"
 

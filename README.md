@@ -1,6 +1,6 @@
 # Dotfiles for macOS and Linux ⚙️
 
-Personal **dotfiles** managed with **GNU Stow** and **just** for a fast, reproducible terminal setup on macOS and Linux. This repository configures Fish, Zsh, Starship, Tmux, Atuin, Ghostty, and AI coding agents such as Codex, Claude, and Pi.
+Personal **dotfiles** managed with **GNU Stow** and **just** for a fast, reproducible terminal setup on macOS and Linux. This repository configures Fish, Zsh, Starship, Tmux, Atuin, Ghostty, and AI coding agents such as Codex and Pi.
 
 ## ✨ Features
 
@@ -23,7 +23,6 @@ Personal **dotfiles** managed with **GNU Stow** and **just** for a fast, reprodu
 | `tmux` | Terminal multiplexer config | GNU Stow |
 | `ghostty` | Ghostty terminal config | GNU Stow; installed by default on macOS |
 | `codex` | Codex CLI instructions and config | Copy and overwrite via `just install` |
-| `claude` | Claude settings | Copy and overwrite via `just install` |
 | `pi` | Pi coding agent instructions and settings | Copy and overwrite via `just install` |
 
 ## ✅ Prerequisites
@@ -44,7 +43,7 @@ cd ~/dotfiles
 just
 ```
 
-The default install links `atuin`, `zsh`, `starship`, `fish`, and `tmux`; it also copies and overwrites agent configs for Codex, Claude, and Pi. On macOS, `ghostty` is installed automatically too.
+The default install links `atuin`, `zsh`, `starship`, `fish`, and `tmux`; it also copies and overwrites agent configs for Codex and Pi. On macOS, `ghostty` is installed automatically too.
 
 ## 🍎 macOS Bootstrap
 
@@ -109,7 +108,6 @@ Agent configuration is intentionally **not symlinked**. During `just install`, i
 This applies to:
 
 - Codex: `~/.codex`
-- Claude: `~/.claude`
 - Pi: `~/.pi/agent`
 
 ## 🐟 Set Fish as the Default Shell on macOS
