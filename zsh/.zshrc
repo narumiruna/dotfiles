@@ -26,6 +26,7 @@ source $HOME/.config/zsh/code.zsh
 # common
 source $HOME/.config/zsh/pyenv.zsh
 source $HOME/.config/zsh/fnm.zsh
+source $HOME/.config/zsh/bun.zsh
 
 path=("$HOME/.local/bin" $path)
 
