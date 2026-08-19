@@ -7,7 +7,7 @@
 - Explain the main idea simply before adding necessary detail.
 - Keep information accurate.
 - Make documented rules specific and verifiable.
-- In documentation, put each prose sentence on its own source line.
+- In documentation prose, write one sentence per line.
 
 ## Code Style
 
