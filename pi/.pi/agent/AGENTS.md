@@ -1,5 +1,3 @@
-# Global AGENTS.md
-
 ## Communication & Documentation
 
 - Lead with the most important relevant information and omit anything unnecessary or repeated.
